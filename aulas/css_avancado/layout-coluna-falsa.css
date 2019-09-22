@@ -1,0 +1,71 @@
+/*
+* Layout - Imagem Líquida
+*/
+/* Geral */
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	background-color:#fafafa;
+}
+/* Layout */
+#container{
+	width:960px;
+	min-width:720px; /*define largura mínima do elemento*/
+	max-width:1280px;
+	margin:0 auto;
+	background:#fff url(imagens/coluna.png) repeat-y;
+}
+#marca{
+	width:100%;
+	height:200px;
+	background:#225992 url(imagens/cabecalho2.jpg) no-repeat center;
+	text-align:center;
+	line-height:200px;
+	color:#fff;
+}
+#conteudo{
+	float:right;
+	width:75%;
+}
+#conteudo-principal{
+	width:63%;
+	float:left;
+}
+/*#img-conteudo-principal{
+	width:90%;
+	overflow:hidden;
+}*/
+#conteudo-secundario{
+	width:34%;
+	float:right;
+	background-color:#d1d1d1;
+}
+#conteudo-secundario h1,
+#conteudo-secundario h2,
+#conteudo-secundario h3,
+#conteudo-secundario p{
+	padding:0 20px;
+}
+#navegacao{
+	width:23%;
+	float:left;
+	padding: 20px 0;
+	/*background-color:#d1d1d1;*/
+}
+#navegacao ul{
+	list-style:none;
+}
+#navegacao li a{
+	text-decoration:none;
+}
+#rodape{
+	clear:both;
+	padding:5px;
+	background-color:#c4c4c4;
+}
+/* Classes */
+img.img-noticias{
+	width:96%;
+	padding:2%;
+	max-width:600px;
+}
+/* Básicos */

@@ -1,0 +1,30 @@
+/**
+* Elementos Flutuantes com CSS3
+* É fundamental para todos os Layout de uma Webpage
+* Os elementos flutuantes sobrepõe todos os elementos quando colocado na mesma posição
+* O uso da propriedade float, deixa os elementos com fluxo e casa distorção da página
+* para limpar essa distorção é preciso o uso de outra propriedade.
+* A propriedade "clear" com os valores (left,right,both e none) remove o fluxo
+* 
+* Quando usa float dentro de div, tem um comportamenteo diferente de texto - neste caso
+* a div interna ficará sobre as div's com float e não aparecerá - para resovolver isso
+* é preciso inserir uma nova div vazia com propriedade clear
+*/
+p {
+	color: white;
+}
+#principal {
+	background-color: green;
+}
+.conteudo {
+	background: gray;
+	color: white;
+	width: 200px;
+	height:200px;
+	border: 1px solid red;
+	margin: 10px;
+	float: left;
+}
+.clear {
+	clear:both;
+}

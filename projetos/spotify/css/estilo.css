@@ -1,0 +1,238 @@
+/*
+* Geral
+=============================================================================*/
+html,body{
+	height:100%; /*para ocupar todo a visualização da página*/
+	overflow-x:hidden;
+}
+body{
+	background:url(../imagens/capa.png), /*acima e com opacidade, efeito śo pode com opacity*/
+				url(../imagens/ruido.png),/*imagem sobreposta no meio e com transparência*/
+				linear-gradient(50deg,#ff4169,#7c26f8); /*degrade por baixo*/
+	background-attachment: fixed;
+	font-family: 'Circular Std Black','Circular Std book', Helvetica,Ariel,sans-serif;
+}
+footer{
+	height:540px;
+	padding:80px 0;
+	position:relative;
+	background:#000;
+}
+h1{
+	font-weight:900;
+	letter-spacing: -0.05em;
+	margin-bottom:50px;
+	color:white;
+}
+h2{
+	font-weight:700;
+	letter-spacing: -0.04em;
+	font-size:3em;
+}
+h3{
+	font-weight:700;
+	letter-spacing: -0.04em;
+	font-size:2em;
+}
+/*
+* Layout
+=============================================================================*/
+
+nav.bg-trans{
+	background:rgba(0,0,0,0.6);
+	padding:15px 0;
+}
+section#home{
+	height:100%;
+}
+section#servicos{
+	background:white;
+}
+section#servicos h2, h3{
+	color:#7c25f8;
+}
+section#recursos{
+	color:white;
+}
+section#recursos h3{
+	color:#9bf0e1;
+}
+section#recursos h2{
+	color:white;
+}
+footer#rodape h4{
+	color:#919496;
+	font-size:0.8em;
+	text-transform: uppercase;
+	padding-top: 18px;
+}
+footer .navbar-nav a{
+	color:white;
+	font-size:0.8em;
+}
+footer .navbar-nav a:hover{
+	color:#9b70e1;
+	text-decoration:none;
+}
+footer ul{
+	list-style:none;
+}
+footer ul li{
+	float:right;
+	margin:0 5px;
+}
+footer .f-nav{
+	/*margin-top:220px;*/
+	height:320px;
+	font-size:0.9em;
+}
+footer .f-nav a{
+	color:#919496;
+	margin-right: 10px;
+}
+/*
+* Classes
+=============================================================================*/
+/*para sobrescrever classes do bootstrap deve iniciar pelas classes pai até a filha*/
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:#9bf0e1;
+}
+.navbar-light .navbar-toggler{
+	color:rgba(255,255,255,0.5);
+	border-color:rgba(255,255,255,0.5);
+}
+.divisor{
+	width:1px;
+	background:white;
+	margin:15px;
+	height:12px;
+}
+.capa{
+	text-align:center;
+}
+.btn-custom{
+	color:white;
+	border-radius:500px;
+	-webkit-border-radius:500px;
+	-moz-border-radius:500px;
+	text-transform: uppercase;
+	transition: background 0.4s, color 0.4s;
+	padding:10px 20px;
+}
+.btn-roxo{
+	background:#7c25f8;
+}
+.btn-roxo:hover{
+	background:#6207e3;
+	color:white;
+}
+.btn-branco{
+	border:2px solid white;
+}
+.btn-branco:hover{
+	background-color:#fff;
+	color:black;
+}
+.albuns{
+	padding:10px 0;
+}
+.caixa{
+	padding:20px 0;
+}
+.rotacionar{
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-ms-transform:rotate(30deg);
+	transform: rotate(30deg);
+	padding-left: 80px;
+}
+.market{
+	position: absolute;
+	top:-30px;
+	right:0px;
+}
+.copy{
+	color:#919496;
+	font-size:12px;
+}
+.carousel-control-prev, .carousel-control-next{
+	width:5%;
+}
+/*
+* Media Queries
+=============================================================================*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px){
+	.btn-custom{
+		margin:10px 15px;
+		font-size:1em;
+	}
+	footer{
+	height:880px;
+	}
+	footer img.social-footer{
+	width:40px;
+	}
+
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px){
+	h1{
+		font-size:3em;
+	}
+	.btn-custom{
+		margin:10px 15px;
+	}
+	footer{
+	height:880px;
+	}
+	footer .f-nav{
+	font-size:0.9em;
+	}
+	footer img.social-footer{
+	width:40px;
+	}
+
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px){
+	h1{
+		font-size:4em;
+	}
+	section#servicos h2{
+		font-size:2.3em;
+	}
+	section#servicos h3{
+		font-size:1.3em;
+	}
+	section#servicos p{
+		font-size:0.880em;
+	}
+	section#recursos h2{
+		font-size:2.3em;
+	}
+	section#recursos h3{
+		font-size:1.3em;
+	}
+	section#recursos p{
+		font-size:0.880em;
+	}
+	footer img.social-footer{
+		width:40px;
+	}
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px){
+	h1{
+		font-size:5em;
+	}
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){
+	h1{
+		font-size:6em;
+	}
+}

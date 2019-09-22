@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JQuery</title>
+		<link rel="icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() =>{
+				//adicionar elemento como filho dentro de lista1 e no final
+				$('#lista1').append('<li>item 4</li>')
+				$('#lista1').prepend('<li>item 0</li>')
+
+				// adicionar elementos após a div ou antes da div
+				$('#lista2').before('<p>Eu fui inserido antes da div</p>')
+				$('#lista2').after('<p>Eu fui inserido após da div</p>')
+
+				// remoção do elemento pelo id
+				//$('#lista1').remove()
+
+				// remoção de todos os elementos pela classe
+				$('.item2').remove()
+			})
+			/*
+			* before: antes da abertura da tab
+			* prepend: no inicio do conteúdo da tag
+			* append: no final do conteúdo da tag
+			* after: após o fechamento da tag
+			*
+			* O primeiro passo é identificar o ponto de referência onde os elementos serão adicionados - isto é,
+			* o elemento pai
+			*
+			* A função html() substitui todos os elementos da tag e insere novos
+			* remove() remove toda div pai e seus respectivos filhos
+			*/
+		</script>
+	</head>
+	<body>
+
+		<div class="container">
+			<ul id="lista1">
+				<li>item 1</li>
+				<li class="item2">item 2</li>
+				<li>item 3</li>
+			</ul>
+			<div id="lista2">
+				<div>item 1</div>
+				<div class="item2">item 2</div>
+				<div>item 3</div>
+				<hr>
+			</div>
+		</div>
+		
+	</body>
+</html>

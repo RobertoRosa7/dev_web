@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JQuery</title>
+		<link rel="icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	
+    	<style>
+    		button{
+    			width:140px;
+    			margin-bottom: 5px;
+    		}
+    		div{
+				height:140px;
+				width:140px;
+    		}
+    		h2{
+    			display:inline-block;
+    			position: relative;
+    			left: -300px;
+    		}
+    		.grupo{
+				padding:20px;
+				float: left;
+    		}
+			.div1{
+				background-color: #aaa;
+			}
+			.div2{
+				background-color:DodgerBlue;
+			}		
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() =>{
+				$('#btn1').on('click', () => {
+					$('#div1').animate({
+						
+						'width':'200px',
+						'height':'200px',
+						'margin-left':'50px',
+						'margin-top':'50px',
+						'border-radius':'200px'
+					}, 
+					{
+						duration: 2000,
+						start: () => {console.log('animação inicializada: 1')},
+						complete: () => {
+							$('#div2').animate({
+								
+								'width' : '200px',
+								'height' : '200px',
+								'margin-left' : '50px',
+								'margin-top' : '50px',
+								'border-radius' : '200px'
+							},
+							{
+								duration:2000,
+								start: () => {console.log('animação incializada: 2')},
+								complete: () => {
+									$('#welcome').animate({
+										'left': '300px'
+									},
+									{
+										duration:2000
+									})
+								}
+							})
+						}
+					})
+				})
+			})
+			/*
+			* Animações - animate(<objeto literal>,)
+			* primeiro parâmetro é um objeto literal que represente estado DESEJA após a transição
+			* segundo parâmetro é o tempo de duração da transição ou um bloco de código para tratar os efeitos
+			*/
+		</script>
+		
+	</head>
+	<body>
+		<button id="btn1" type="button">Iniciar animação</button>
+		<div class="div1" id="div1"></div>
+		<div class="div2" id="div2"></div>
+		<h2 id="welcome">Seja bem Vindo(a)!</h2>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    let nome = 'Roberto';
+    //console.log(`Oi ${nome}, tudo bem?`);
+
+    //Calcular expressões matemáticas
+    //console.log(`8 + 8 = ${8+8}`);
+    function calc(x,y){
+      return x * y;
+    }
+    console.log(`7 * 7 = ${calc(7,7)}`);
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Template String</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Template String</h3>
+          <p class="text-justify">
+            É uma interpolação da interpretação do javascript. Para fazer uma simplificação de concatenação das
+            string quando é exibida ao usuário, assim com o uso do template string é mais eficaz e traz melhor
+            resultado na hora de codificar.
+            Para o uso do template é preciso usar cráse(``), <span class='text-danger'>não é aspas simples.</span>
+          </p>
+
+          <p class="text-justify">
+            Para a inserção de variáveis dentro do template string é necessário o uso de ( ${}, cifrão mais chaves)
+          </p>
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

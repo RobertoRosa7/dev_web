@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+    <style>
+
+      h4{
+        font-size:3em;
+      }
+      .label-text{
+        text-transform: uppercase;
+        font-size:.8em;
+      }
+      .alert{
+        display: none;
+      }
+      .erroEmail{
+        margin:0;
+        padding:0;
+        color:red;
+        display:inline-block;
+        /*display: none;*/
+      }
+      .correctEmail{
+        margin:0;
+        padding:0;
+        color:green;
+        display:inline-block;
+        /*display: none;*/
+      }
+      .zoomOut{
+        font-size:.630em;
+        transition: all .3s;
+        text-transform: uppercase;
+      }
+      .zoomIn{
+        font-size:.8em;
+        transition: all .3s;
+        text-transform: uppercase;
+
+      }
+      .form-control:focus {
+        border-color: #cccccc;
+        outline: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+}
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <main class="container">
+      <h4 class="bg-warning">Atividade de fixação - validação de formulários</h4>
+      <div class="row no-gutters">
+        <div class="col-6 offset-3">
+            <form action="">
+              <div class="form-group">
+                  <label id="alvo2"  class="label-text" for="">entrada de texto:</label>
+                   <input onkeyup="extrairString() "onblur="changeBlur()" onfocus="changeFocus()" type="text" class="form-control" id="entrada">
+              </div>
+              <div class="form-group">
+                  <label id="alvo" class="label-text" for="">entrada de texto:</label>
+                   <input onfocus="zoomOut()" onblur="zoomIn()" type="text" class="form-control" id="target">
+                   <div class="alert" ><small class="erroEmail">Digite um e-mail válido!</small></div>
+                   <div class="alert" ><small class="correctEmail">Digite um e-mail válido!</small></div>
+                   <input onclick="validate()" type="submit" class="btn btn-primary btn-block mt-3" value="enviar">
+
+              </div>
+            </form>         
+        </div>
+        <div class="col-12">
+          <p>
+            1) Crie um campo input type="text" e aplique os seguintes controles com base nos
+                eventos abaixo:
+                No evento de foco modifique o background do input para amarelo.
+                Quando o campo perder o foco, recupere o seu respectivo valor e:
+                o Caso o conteúdo contido no campo tenha menos de 3 caracteres o mesmo
+                deve ter seu background alterado para vermelho.
+                o Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background
+                deve ser alterado para verde.
+          </p>
+        </div>
+      </div><!-- /row -->
+    </main><!-- /container -->
+      <!-- JavaScript (Opcional) -->
+      <script>
+        function changeFocus(){
+          document.getElementById('entrada').className = 'form-control bg-warning';
+          document.getElementById('alvo2').className = 'zoomOut';
+
+        }
+        function changeBlur(){
+          document.getElementById('entrada').className = 'form-control bg-white';
+          document.getElementById('alvo2').className = 'zoomIn';
+        }
+        function extrairString(){
+          // coletando dados do formulário
+          var char = document.getElementById('entrada').value;
+          // verificando a quantidade de caracteres
+          // var qtdChar = char.length;
+
+          // verificando as condições
+          if(char.length < '3'){
+            document.getElementById('entrada').className = 'form-control bg-danger';
+          }else{
+            document.getElementById('entrada').className = 'form-control bg-success'
+          }
+        }
+        function zoomOut(){
+          document.getElementById('alvo').className = 'zoomOut';
+        }
+        function zoomIn(){
+          document.getElementById('alvo').className = 'zoomIn';
+
+        }
+
+      </script> 
+  </body>
+</html>

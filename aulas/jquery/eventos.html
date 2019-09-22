@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			#divExterna{
+				background-color:#ccc;
+				width:80px;
+				height:80px;
+				padding:70px;
+			}
+			#divInterna{
+				height:80px;
+				width:80px;
+				background-color:blue;
+			}
+			.inputFocado{
+				background-color:orange;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			// carregando elementos do DOM
+			$(document).ready(() => {
+				// carregando a página
+				$('#onload').html('Página carregada')
+
+				// acionando scroll associado ao evento window
+				$(window).scroll(() => {$('#scroll').html('Scroll acionado')})
+				
+				// acionando resize associado ao evento window
+				$(window).resize(() => {$('#resize').html('Página redimensionada').css('background-color', 'red')})
+			
+				// this no contexto de callback indica que queremos atuar no elemento selecionado
+				//$('#div1').scroll(function(){$(this).css('background-color', 'blue')})
+				
+				// usando arrow function para capturar eventos 
+				$('#div1').scroll(e => {$(e.target).css('background-color','blue')})
+
+				// adicionando evento mousedown
+				$('#btn1').mousedown(() => {$('#div2').css('background-color','green')})
+
+				// adicionando evento mouseup ou click - resultado é o mesmo
+				//$('#btn1').mouseup(() => {$('#div2').css('background-color','blue')})
+				$('#btn1').click(() => {$('#div2').css('background-color','blue')})
+
+				// adicionando evento duplo click
+				$('#btn2').dblclick(() => {$('#div2').css('background-color', 'yellow')})
+
+				// adicionando evento mousemove
+				$('#div2').mousemove(e => {$('#divResult').html(` X: ${e.offsetX} Y: ${e.offsetY}`)})
+
+				// mouseover / mouseout (antigo)
+				/*
+				$('#divExterna').mouseover(() => {
+					$('#resultadoDiv1').html('entrou')
+					console.log('div externa: entrou')
+				 })
+				$('#divInterna').mouseover(() => {
+					$('#resultadoDiv2').html('entrou')	
+					console.log('div interna: entrou') 
+				})
+				$('#divExterna').mouseout(() => {
+					$('#resultadoDiv1').html('saiu')	
+					console.log('div externa: saiu') 
+				})
+				$('#divInterna').mouseout(() => {
+					$('#resultadoDiv2').html('saiu')	
+					console.log('div interna: saiu') 
+				})
+				*/
+				/*
+				// mouseenter / mouseleave (novo)
+				$('#divExterna').mouseenter(() => {
+					$('#resultadoDiv1').html('entrou')
+					console.log('div externa: entrou')
+				})
+				$('#divExterna').mouseleave(() => {
+					$('#resultadoDiv1').html('saiu')
+					console.log('div externa: saiu')
+				})
+				$('#divInterna').mouseenter(() => {
+					$('#resultadoDiv2').html('entrou')
+					console.log('div interna: entrou')
+				})
+				$('#divInterna').mouseleave(() => {
+					$('#resultadoDiv2').html('saiu')
+					console.log('div interna: saiu')
+				})
+				*/
+				//$('#teclado').keydown(() => {$('#resultadoTeclado').html('tecla pressionada')console.log('tecla pressionada')})
+				/*
+				$('#teclado').keyup(e => {
+					$('#resultadoTeclado').html('Tecla liberada')
+
+					// sistema utilizado em chat
+					if(e.keyCode == 13){
+						let txt = $(e.target).val()
+						$('#resultadoTeclado').html(txt)
+						$(e.target).val('')
+					}
+				})
+				*/
+
+				// somente números no campo
+				$('#teclado').keyup((e) => {
+					if(e.keyCode < 95 || e.keyCode > 105){
+						let num = $(e.target).val()
+						num = num.slice(0, -1)
+						$(e.target).val(num)
+					}
+				})
+
+				// adicionando focus no elemento
+				$('#nome, #email').focus((e) => {
+					$(e.target).addClass('inputFocado')
+				})
+
+				// adicionando blur no elemento
+				$('#nome, #email').blur((e) => {
+					$(e.target).removeClass('inputFocado')
+				})
+
+				// captura de mudança nos valores - checkbox | select | radio
+				$('#opcao').change((e) => {
+					console.log($(e.target).val())
+				})
+
+				// captura submit
+				$('#form').submit((e) => {
+					// evita o comportamento default do elemento
+					e.preventDefault()
+					console.log('formulário enviado')
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Rize window: </span><span id="resize">?</span>
+			<div id="div1" style="height:100px; width:100px ; border:1px solid #000; overflow-y:scroll;">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div</span><span id="divResult"></span>
+			<div id="divExterna">
+				<div id="divInterna"></div>
+			</div>
+			<span>Div externa:</span><span id="resultadoDiv1"></span>
+			<br>
+			<span>Div externa:</span><span id="resultadoDiv2"></span>
+			<hr />
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input id="teclado" type="text" />
+			<span id="resultadoTeclado">Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form id="form">
+				<span>Nome:</span>
+				<input type="text" id="nome" />
+
+				<span>E-mail:</span>
+				<input type="text" id="email" />
+
+				<span>Motivo do contato:</span>
+				<select id="opcao">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>

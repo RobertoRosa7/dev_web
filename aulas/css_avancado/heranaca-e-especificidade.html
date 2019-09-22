@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Herança & Especificidade</title>
+	<style>
+		/** Herança e Especificidades */
+		/*
+		* Quando há aplicação de propriedades em seletores gerais - todos os outros irão
+		* herdar seus valores, neste caso, todos os texto dentro do documento irão ficar
+		* com a mesma cor vermelha.
+		*/
+		body{
+			font-size:2em;
+		}
+		/** Especificidade */
+		/*
+		* No caso de especificidade sempre o elemento que vier depois terá seu valor
+		* alterardo, isso significa que quando hover dois elementos iguais com valores
+		* diferentes o elemente que vier depois terá seu valor aplicado.
+		*
+		* Para solucionar este tipo de especificidade é preciso dizer que o elemento é
+		* mais importante que os próximos que vieram. (!important)
+		* 
+		* Recomendação é não usar !important, devido sua prioridade aos demais.
+		*/
+
+		/*p{
+			color:red !important;
+		}
+		p{
+			color:blue;
+		}*/
+	</style>
+</head>
+<body>
+	<div id="pagina">
+		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sed.</h2>
+		<p>fuga dignissimos quibusdam praesentium at a impedit animi, eveniet amet asperiores sequi ducimus aperiam illo, qui incidunt numquam. Quaerat</p>
+		<p>fuga dignissimos quibusdam praesentium at a impedit animi, eveniet amet asperiores sequi ducimus aperiam illo, qui incidunt numquam. Quaerat</p>
+	</div>
+</body>
+</html>

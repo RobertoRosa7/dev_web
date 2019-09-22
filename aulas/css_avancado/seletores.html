@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Seletores</title>
+	<style>
+		/*
+		* Seletores
+		* seletor universal = *{}
+		* seletor de texto  = h1,h2,h3,{}
+		* seletor de classe = .verde{} seleciona o elemento cujo class tem valor "verde"
+		* seletor de classe = p.verde{} seleciona <p> cujo class tem valor "verde"
+		* seletor de ID     = #verde{} seleciona elementos pelo seu identificador
+		* seletor de filho  = li>a{} seleciona apenas elementos filhos
+		* descendente       = p a {} seleciona todos os elementos que estão dentro de p
+		* ascendente        = P + a {} seleciona todos os elementos acima de p
+		* seletor de irmão  = h1~p{} seleciona todos os irmão de h1
+		*/
+		/** seletor universal*/
+		*{
+		}
+		/** seletor de texto */
+		h1{
+		}
+		/** seletor de classe */
+		#classe{
+		}
+		/* somente para págrafos */
+		p.classe{
+		}
+		ul{
+			border-right: 1px solid #a2a2a2;
+			float:left;
+			padding: 15px;
+			margin: 0px;
+		}
+		ul>li{
+			padding:15px;
+			background-color: #eee;
+			margin: 5px;
+			list-style: none;
+			width:300px;
+		}
+		li>a{
+			text-decoration:none;
+			font-size:1em;
+			font-family:Helvetica;
+			color:#fb6000;
+		}
+		li>span>a{
+			font-size:1em;
+			color:#fb6000;
+			text-decoration: none;
+			font-family:Helvetica;
+		}
+		h1+p{
+			color:blue;
+		}
+		h1~p{
+			color:brown;
+		}
+		#container{
+			width:1100px;
+			margin: 0 auto;
+		}
+		#p{
+			float:left;
+			margin-left: 5px;
+			padding: 15px;
+			border-right: 1px solid #a2a2a2;
+		}
+		#p2{
+			float:left;
+			margin-left: 5px;
+			padding: 15px;
+			border-right: 1px solid #a2a2a2;
+		}
+		.clear{
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="p">
+			<a href="">Link fora do seletor de filho</a>
+			<div class="classe">
+				<h1>Título da página</h1>
+				<p class="classe">páragrafo da página 1</p>
+			</div>
+			<span class="classe">teste span</span>
+			<p class="classe">teste paragrafo</p>
+		</div>
+
+		<ul>
+			<li><a href="">link - usando seletores filhos</a></li>
+			<li><a href="">link - usando seletores filhos</a></li>
+			<li><a href="">link - usando seletores filhos</a></li>
+			<li><span><a href="">link - com span entre li entre filhos</a></span></li>
+			<li><a href="">link - usando seletores filhos</a></li>
+			<li><a href="">link - usando seletores filhos</a></li>
+			<li><a href="">link - usando seletores filhos</a></li>
+		</ul>
+		
+		<div id="p2">
+			<h1>Paragrado adjacente de p</h1>
+			<p>paragrafo adjacente de h1, irmão de h1</p>
+			<p>paragrafo adjacente de h1, irmão de h1</p>
+			<p>paragrafo adjacente de h1, irmão de h1</p>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
+</body>
+</html>

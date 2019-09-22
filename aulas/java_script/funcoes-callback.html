@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <h4 class="display-4 bg-warning text-center">Funções CallBack</h4>
+         
+           <!-- JavaScript (Opcional) -->
+          <script>      
+          /*
+          * Funções de callback
+          * São funções que encaminha resultados para outras funções - por isso no nome de callback
+          * que indica chamada de volta.
+          * 
+          * callbackSucesso(titulo, descricao)
+          * callbackErro(erro)
+          *
+          * function exibirArtigo(id, callbackSucesso, callbackErro){
+            
+            // Lógica para recuperar o artigo com base no id
+            if(?){
+              callbackSucesso('titulo', 'descricao');
+            }else{
+              callbackErro('Erro');
+            }
+
+          }
+          */
+          function exibirArtigo(id, callbackSucesso, callbackErro){
+            // Lógica: recuperar o id via requisição https
+            if(true){
+              callbackSucesso('Funções de callback em JS', 'Funções de callback são muito usadas...');
+            }else{
+              callbackErro(' ao recuperar os dados.');
+            }
+          }
+          // encapsular as funções anônimas em variáveis
+          var callbackSucesso = function(titulo, descricao){
+            document.write('<h1> '+ titulo +' </h1>');
+            document.write('<hr>');
+            document.write('<p> '+ descricao + ' </p>')
+
+
+          }
+          var callbackErro = function(erro){
+            document.write('<p><b>Erro:</b>'+ erro+ '</p>');
+          }
+          // não se deve colocar parêntese por está sendo encaminhado a referência da função
+          exibirArtigo(1, callbackSucesso, callbackErro);
+       
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

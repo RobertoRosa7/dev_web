@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+    <!-- Your custom script here -->
+    <script type="text/babel">
+
+      const SERIES = 'Friends';
+      //SERIES = 'The Walking Dead'; 
+      function x(){
+        const SERIES = 'The Walking Dead';
+        console.log('Dentro da função: ' + SERIES);
+      }
+      x();
+      console.log('Fora da Função: ' + SERIES);
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Operador Const</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Const</h3>
+          <p class="text-justify">
+            O operador const, é uma constante de variável que não altera seu valor no decorrer do script. Para as
+            declaração é uma boa prática usar caracteres maiúsculos.<br>
+            Diferente de declarações comuns de variáveis as const deve receber seu valor no momento de sua
+            declaração.<br>
+            O escopo global não interfere no escopo da função, portanto, a const pode ser aplicadas nas funções e
+            vise versa.
+          </p>
+          <p class="text-justify">
+            Normalmente, as constantes são usada nas declarações de senhas, logins, ou qualquer outro valor que
+            são constantes no decorrer do código, assim, toda aplicação terá as mesmas constante independemente se
+            houver repetições.
+          </p>
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

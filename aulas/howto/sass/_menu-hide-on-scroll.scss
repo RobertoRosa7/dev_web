@@ -1,0 +1,25 @@
+// menu hide on scroll
+.menu-hide-scroll{
+    background-color:#333;
+    position:fixed;
+    width:100%;
+    top:0;
+    transition: top .3s;
+}
+// links
+.menu-hide-scroll a{
+    float:left;
+    display:block;
+    color:white;
+    padding:14px 16px;
+    font-size:17px;
+    text-decoration: none;
+    &:hover{
+        background:#ddd;
+        color:black;
+    }
+}
+.menu-hide-scroll a.active:hover{
+    background-color:green;
+    color:white;
+}

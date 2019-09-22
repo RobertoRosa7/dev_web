@@ -1,0 +1,132 @@
+
+/**
+* Geral
+=============================================================================*/
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding:0;
+	color:#222;
+	font-size:16px;
+	font-weight: 400;
+	font-family: Circular, Helvetica,Ariel,sans-serif;
+}
+header{
+	text-align: center;
+	padding:25px;
+	border-bottom:1px solid #d9dacd;
+	margin-bottom: 27px;
+	/*margin-right: 5px;*/
+}
+a{
+	text-decoration: none;
+}
+strong{
+	font-weight: 700;
+}
+/**
+*
+=============================================================================*/
+section.content{
+	margin: 0 auto;
+	max-width:450px;
+	/*width:34.5%;*/
+}
+section.content .esqueceu{
+	text-align: center;
+	color:#1db954;
+	font-size:14px;
+	padding:20px 0 40px 0;
+}
+section.content .esqueceu span{
+	margin-right: 5px;
+	color:#000;
+}
+section.content .esqueceu a{
+	color:#1db954;
+	text-decoration: none;
+}
+section.content .esqueceu:hover{
+	color: #13d760;
+
+}
+section.content .termos-direitos{
+	font-size:.7em;
+	color:#c1c3c6;
+}
+section.content .termos-direitos a{
+	color:#1db954;
+}
+/**
+*
+=============================================================================*/
+.btn-custom{
+	width:100%;
+	background-color: #3b5998;
+	color:#fff;
+	border-radius:500px;
+	font-size: 11px;
+	line-height: 1px;
+	padding: 14px 32px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	min-width: 160px;
+	transition-duration: .3s;
+	white-space: normal;
+	font-weight: 700;
+}
+.btn-custom:hover{
+	color:#fff;
+	background-color: #3a61b3;
+}
+.divider-title{
+	font-size: 12px;
+	font-weight: 650;
+	padding:0px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: #fff;
+}
+.divider{
+	display: block;
+	line-height: 1px;
+	margin:25px 0;
+	position:relative;
+	border-top: 1px solid #d9dadc;
+	text-align: center;
+}
+.form-control{
+	color:#222326;
+}
+.form-custom{
+	border:1px solid #d9dadc;
+	margin-bottom: 10px;
+	border-radius: 0 !important;
+	font-size:14px;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	transition-property: border-color, box-shadow;
+	transition-duration: 0.15s 0.15s;
+	transition-timing-function: ease-in-out, ease-in-out;
+	transition-delay: 0s 0s;
+	height: 40px;
+	padding:6px 12px;
+}
+.form-custom:focus{
+	outline: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border:1px solid #000;
+}
+input.btn-custom{
+	background-color:#1db954;
+	color:#fff;
+	border:none;
+	height:35px;
+}
+input.btn-custom:hover{
+	background-color: #13d760;
+	color:#fff;
+}

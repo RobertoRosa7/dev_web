@@ -1,0 +1,24 @@
+// menu slide on scroll
+.menu-slide-scroll{
+    background:#333;
+    position:fixed;
+    top:-50px; // hide the menu top
+    width:100%; // full
+    transition: top .4s;
+}
+// links
+.menu-slide-scroll a{
+    float:left;
+    display:block;
+    text-decoration: none;
+    padding:14px 16px;
+    text-align: center;
+    color:white;
+    &:hover{
+        background-color:#777;
+        color:white;
+    }
+}
+.menu-slide-scroll a.active:hover{
+    background-color:green;
+}

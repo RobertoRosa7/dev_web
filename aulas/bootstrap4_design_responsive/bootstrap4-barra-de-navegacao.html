@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+
+    <!-- Título da página -->
+    <title>Barra de navegação - Bootstrap4</title>
+  </head>
+  <body style="padding:20px;">
+
+    <!-- Tipos de navegação - nav-pills | nav-tabs -->
+    <!-- Tipos de alinhamentos - justify-content-center | justify-content-end | flex-column -->
+    <!-- nav-pills - funciona somente se no link tiver uma classe active -->
+    <h2>Navegação com / abas</h2>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="">Contato</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Sobre</a></li>
+    </ul>
+
+    <!-- Barra de navegação simples -->
+    <h2>Navegação simples</h2>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Navegação -->
+      <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+        <li class="nav-item"><a class="nav-link" href="">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="">contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Navegação com menu responsivo -->
+    <h2>Navegação com menu Responsive</h2>
+
+    <!-- navbar-expand-sm é responsável pela responsividade da barra de navegação, faz o menu humburger aparecer  -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Criação do menu humburger, antes dos itens navegação -->
+      <!-- data-toggle = para abrir menu quando clicado -->
+      <!-- data-target = alvo que receberá a ação de abrir o menu quando clicado -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target"><span class="navbar-toggler-icon"></span></button>
+
+      <!-- div de ocultação dos menus quando responsivo -->
+      <!-- nav-target = identificação da div -->
+      <!-- navbar-collapse = classe de ajuste dos itens de menu após a inserção do botão humburger -->
+      <div class="collapse navbar-collapse" id="nav-target"><!--collapse oculta menu-->
+        <!-- Navegação -->
+        <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+          <li class="nav-item"><a class="nav-link" href="">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="">contato</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Barra de navegação com formulário -->
+    <h2>Navegação com formulário</h2>
+
+    <!-- navbar-expand-sm é responsável pela responsividade da barra de navegação, faz o menu humburger aparecer  -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Criação do menu humburger, antes dos itens navegação -->
+      <!-- data-toggle = para abrir menu quando clicado -->
+      <!-- data-target = alvo que receberá a ação de abrir o menu quando clicado -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#form-target"><span class="navbar-toggler-icon"></span></button>
+
+      <!-- div de ocultação dos menus quando responsivo -->
+      <!-- nav-target = identificação da div -->
+      <!-- navbar-collapse = classe de ajuste dos itens de menu após a inserção do botão humburger -->
+      <div class="collapse navbar-collapse" id="form-target"><!--collapse oculta menu-->
+        <!-- Navegação -->
+        <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+          <li class="nav-item"><a class="nav-link" href="">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="">contato</a></li>
+        </ul>
+
+        <!-- Formulário -->
+        <form action="" class="form-inline">
+          <input type="text" class="form-control" placeholder="Pesquisar">
+          <button class="btn btn-outline-success" type="submit">ok</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Barra de navegação com menu dropdown -->
+    <h2>Navegação com menu dropdown</h2>
+
+    <!-- navbar-expand-sm é responsável pela responsividade da barra de navegação, faz o menu humburger aparecer  -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Criação do menu humburger, antes dos itens navegação -->
+      <!-- data-toggle = para abrir menu quando clicado -->
+      <!-- data-target = alvo que receberá a ação de abrir o menu quando clicado -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#form-target"><span class="navbar-toggler-icon"></span></button>
+
+      <!-- div de ocultação dos menus quando responsivo -->
+      <!-- nav-target = identificação da div -->
+      <!-- navbar-collapse = classe de ajuste dos itens de menu após a inserção do botão humburger -->
+      <div class="collapse navbar-collapse" id="form-target"><!--collapse oculta menu-->
+        <!-- Navegação -->
+        <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+          <li class="nav-item dropdown"><!--dropdown para indicar que este item será drop-->
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">home</a><!--dropdown-toggle para indicar que aqui será item de clique-->
+
+            <!-- Criação dos itens dropdown -->
+            <div class="dropdown-menu"><!--dropdown-menu para ocultar os sub-itens-->
+              <a class="dropdown-item" href="">sub-item 1</a>
+              <a class="dropdown-item" href="">sub-item 2</a>
+              <a class="dropdown-item" href="">sub-item 3</a>
+              <a class="dropdown-item" href="">sub-item 4</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="">contatos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Barra de navegação em cores -->
+    <h2>navegação em cores</h2>
+    <nav class="navbar navbar-expand-sm navbar-light bg-danger"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Navegação -->
+      <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+        <li class="nav-item"><a class="nav-link" href="">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="">contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Barra de navegação - alinhamentos, fixed-top | fixed-bottom | sticky -->
+    <h2>Navegação - alinhamento</h2>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-info"><!--geral da navegação--->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="">Chalé Hotel</a><!--link separado para logo-->
+
+      <!-- Navegação -->
+      <ul class="navbar-nav ml-auto"><!-- menu de itens - margin auto para deslocar-lo para direita -->
+        <li class="nav-item"><a class="nav-link" href="">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="">serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="">contato</a></li>
+      </ul>
+    </nav>
+
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+    <h2>Conteúdo extra</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur laudantium quo, quam sapiente ab debitis animi, quisquam in beatae. Delectus aut eligendi ea, perspiciatis quod velit, adipisci officiis aliquam dolorum.
+    </p>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

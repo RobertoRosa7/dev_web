@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/
+    GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>Variáveis JavaScript no HTML</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <h1 class="text-center">Alterando Valores das variáveis</h1>
+      <div class="row">
+
+        <div class="col-md-6">
+          <h3 class="bg-warning text-center">Variáveis</h3>
+          <p>Há a declaração de um nome que aponta para um endereço de memória que será armazenado um determinado valor que poderá ser alterado a qualquer momento</p>
+        
+          <p class="bg-light p-3 d-inline-block">Caixa</p>
+          <p>Uma analogia próximo se aplica a uma caixa que pode ser nomeada e conter diversas objetos guardado</p>
+        </div>
+        <div class="col-md-6">
+          <h3 class="bg-warning text-center">Desafio ABC</h3>
+
+              <!-- JavaScript (Opcional) -->
+          <script>
+
+            // Exemplo:
+            // var teste = null; //valor atribuído original
+            // var teste = 'Valor modificado com sucesso!'; //valor alterado e será o seu novo valor
+            // var teste = 123.53; // novo valor numerico
+
+            // console.log(teste);
+            var a = 10;
+            var b = 20;
+            var c = null;
+            document.write('A variável a tem: ' + a + '<br>')
+            document.write('B variável a tem: ' + b + '<br>')
+            document.write('C variável a tem: ' + c + '<br>')
+
+            document.write('<hr>')
+            // Aqui deve ser inseriado a lógica de inversão dos valores A para B e B para A
+            var c = a;
+            var a = b;
+            var b = c;
+            var c = null;
+            // Mostrar para o usuário que essa lógia foi feita
+            document.write('A variável a tem: ' + a + '<br>')
+            document.write('B variável a tem: ' + b + '<br>')
+            document.write('C variável a tem: ' + c + '<br>')
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

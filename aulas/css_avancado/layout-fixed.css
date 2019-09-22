@@ -1,0 +1,60 @@
+/*
+* Layout - Fixed
+* Tema realizado pela Udemy
+*/
+
+/* Geral */
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	background-color:#fafafa;
+}
+/* Layout */
+#container{
+	width:720px;
+	margin:0 auto;
+	background-color:#fff;
+}
+#marca{
+	height:100px;
+	background-color:#9e9e9e;
+	text-align:center;
+	line-height:100px;
+}
+#conteudo{
+	float:right;
+	width:520px;
+}
+#conteudo-principal{
+	width:320px;
+	float:left;
+}
+#conteudo-secundario{
+	width:180px;
+	float:right;
+	background-color:#d1d1d1;
+}
+#conteudo-secundario h1,
+#conteudo-secundario h2,
+#conteudo-secundario h3,
+#conteudo-secundario p{
+	padding:0 20px;
+}
+#navegacao{
+	width:180px;
+	float:left;
+	padding: 20px 0;
+	background-color:#d1d1d1;
+}
+#navegacao ul{
+	list-style:none;
+}
+#navegacao li a{
+	text-decoration:none;
+}
+#rodape{
+	clear:both;
+	padding:5px;
+	background-color:#c4c4c4;
+}
+/* Classes */
+/* Básicos */

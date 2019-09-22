@@ -1,0 +1,50 @@
+// reset document
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height:100%;
+    margin: 0;
+}
+// image background
+.bg-img{
+    background-image:url(../img/tie-glasses-1366x768.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    position:relative;
+    min-height:380px; // control height image
+}
+// style container
+.container{
+    position:absolute;
+    right:0;
+    margin: 20px;
+    max-width:300px;
+    padding:16px;
+    background:white;
+}
+// full-width input fields
+input[type=text], input[type=password]{
+    width:100%;
+    padding:15px;
+    margin: 5px 0 22px 0;
+    border:none;
+    background:#f1f1f1;
+    &:focus{
+        background:#ddd;
+        outline:none;
+    }
+}
+.btn{
+    background-color: #4CAF50;
+    color:white;
+    padding:14px 16px;
+    border:none;
+    cursor:pointer;
+    width:100%;
+    opacity:.9;
+    &:hover{
+        opacity: 1;
+    }
+}

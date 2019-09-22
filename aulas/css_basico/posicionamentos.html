@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Posicionamentos</title>
+
+	<style>
+
+	body {
+		background: #eee;
+	}
+
+	p {
+		width:350px;
+	}
+	h3 {
+		font: 90 19px monospace;
+	}
+
+	#container {
+		background: #fff;
+		width: 920px;
+		margin: 10px auto;
+		padding: 10px;
+		position: relative;
+	}
+	
+	.relative {
+		/**
+		* Para usar a propriedade relative é obrigatório o uso de direcionamento como
+		*  left - right - top e bottom. A posicição inicial do elemento é a base para o
+		*  seu deslocamento
+		*/
+		border: 2px solid red;
+		position: relative;
+		left: 80px;
+	}
+	
+	.absolute {
+		/**
+		* A propriedade absolute não afeta os outros elementos do documento, irá afetar
+		* somente o elemento aplicado, este elemente sairá do fluxo normal da página.
+		* a posição inicial é baseda body, mas se o elemento pai estiver em relativo
+		* então terá como posição inicial
+		* está.
+		*/
+		position: absolute;
+		top:200px;
+		right:80px;
+		border: 2px solid green;
+	}
+
+	.fixed {
+		/**
+		* A propriedadde fixed, tem posição em relação ao documento HTML, e mesmo com
+		* a rolagem terá a mesma posição.
+		*/
+		border: 2px solid blue;
+		position: fixed;
+		top:0px;
+		left:0px;
+		margin: 0px;
+	}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		
+		<h1 align="center" style="text-decoration: underline;">Posicionamentos</h1>
+		
+		<h3>Posicionamentos: static, fixed, absolute, relative</h3>		
+		
+		<p>P1 - Efeito padrão de posicionamento - static</p>		
+		
+		<p class="relative">P2 - Efeito de posicionamento relativo</p>		
+		
+		<p class="fixed">P3 - Efeito padrão de posicionamento - fixed</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		<p>P3 - Efeito padrão de posicionamento - static</p>
+		
+		<p class="absolute">P4 - Efeito de posicionamento - absolute</p>
+
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <title>Auto Completar</title>
+    <style>
+    	* {
+    		box-sizing: border-box;
+    	}
+    	body{
+    		font-size: 16px;
+    	}
+    	input{
+    		border:1px solid transparent;
+    		background-color: #f1f1f1;
+    		padding:10px;
+    		font-size:16px;
+    	}
+    	input[type="text"]{
+    		background-color:#f1f1f1;
+    		width:100%;
+    	}
+    	input[type='submit']{
+    		background-color: DodgerBlue;
+    		color:#fff;
+    	}
+    	.form-control:focus{
+    		box-shadow: none;
+    	}
+    	/* Container deve estar em position relative */
+    	.autocomplete{
+    		position:relative;
+    		display: inline-block;
+    	}
+    	/* div geral a posisão do container item deve ser a mesma do container*/
+    	.autocomplete-items{
+    		position:absolute;
+    		border:1px solid #d3d3d3;
+    		border-top:none;
+    		border-bottom:none;
+    		z-index: 99;
+    		top:100%;
+    		left:0;
+    		right:0;
+    	}
+      /*div para os itens internos */
+    	.autocomplete-items div{
+    		padding:10px;
+    		cursor:pointer;
+    		background-color: #fff;
+    		border-bottom: 1px solid #aaa;
+    	}
+    	.autocomplete-items div:hover{
+    		background-color:#e9e9e9;
+    	}
+    	.autocomplete-active{
+			background-color:DodgerBlue !important;
+			color:#fff;
+    	}
+    </style>
+  </head>
+  <body>
+  	<section id="autocomplete">
+  		<div class="container">
+  			<div class="row justify-content-center">
+  				<div class="col-md-6">
+  					<!-- desligar autocomplete padrão -->
+  					<h3>Criando formulário auto completar</h3>
+  					<form autocomplete="off" action="" class="form-inline">
+  						<div class="autocomplete" title="Países">
+  							<input type="text" class="form-control" name="meupais" id="meupais" placeholder="Paises">
+  							<input type="submit" class="form-control btn btn-primary" value="Buscar">
+  						</div>
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+  	<script>
+  		// Passo 1, desligar autocompletar padrão e criar um formulário básico
+  		// Passo 2, criar um array de palavras
+  		// Passo 3, criar um container em CSS para o dicionario deve ser position relative
+  		// Passo 4, Adicionando javascript
+  		 
+  		
+  		function autocomplete(inp, arr){
+  			/*
+  			* A função autocompletar leva dois parâmetro o primeiro irá conter o array que possibilita
+  			* a autocompletação dos valores que estão armazenados.
+  			*/
+  			var currentFocus;
+
+  			//executa a função quando alguém escreve no campo
+  			inp.addEventListener('input',function(e){
+  				var a, b, i, val = this.value;
+
+  				//Fecha a lista se já estive completos os valores de autocompletar
+  				closeAllLists();
+  				if(!val){return false;}
+  				currentFocus = -1;
+  				
+  				//Criando o elemento Div que irá conter o dicionário de palavras
+  				a = document.createElement('DIV');
+  				a.setAttribute('id', this.id + 'autocomplete-list');
+  				a.setAttribute('class', 'autocomplete-items');
+
+  				//Adicionando a div ao documento e ao seu respectivo pai (elemento superior)
+  				this.parentNode.appendChild(a);
+
+  				//Percorrer cada item do array
+  				for(i = 0; i < arr.length; i++){
+  					
+  					//Verifica se alguns dos itens começa com alguma letra do dicionário
+  					if(arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()){
+  						
+  						//Criar uma div para cada elemento compatível ou encontrado
+  						b = document.createElement('DIV');
+  						
+  						//Faz a letra compatível ficar em negrito
+  						b.innerHTML = '<strong>' + arr[i].substr(0, val.length) + '</strong>';
+  						b.innerHTML += arr[i].substr(0, val.length);
+
+  						//Inserir dentro do campo o valor a letra encontrada no dicionário
+  						b.innerHTML += "<input type='hidden' value='" + arr[i].substr(0, val.length) + "'>";
+
+  						//Executar a função quando houver algum click sobre a letra do dicionário
+  						b.addEventListener('click', function(e){
+  							//Insere o valor dentro do campo para autocompletar
+  							inp.value = this.getElementsByTagName('input')[0].value;
+  							
+  							//Fechar a lista de autocompletar
+  							closeAllLists()
+  						})
+  						a.appendChild(b)
+  					}
+  				}
+  			});
+  			//Excuta a função quando o teclado é prescionado
+  			inp.addEventListener('keydown', function(e){
+  				var x = document.getElementById(this.id + 'autocomplete-list');
+  				if(x) x = x.getElementsByTagName('div');
+  				if(e.keyCode == 40){
+  					//Se a tecla pra baixo for precionada irá aumentar o foco
+  					currentFocus++;
+  					//Faz o atual item ficar mais visível
+  					addActive(x);
+  				}else if(e.keyCode == 38){
+  					//Se a tecla para cima for prescionada ira diminuir o foco
+  					currentFocus--;
+  					//Faz o atual item ficar mais visível
+  					addActive(x);
+  				}else if(e.keyCode == 13){
+  					//Se o Enter for precionado, evita que o formulário seja enviado
+  					e.preventDefault();
+  					if(currentFocus > -1){
+  						//Simula um click no item ativado
+  						if(x) x[currentFocus].click();
+  					}
+  				}
+  			});
+  			//Função adicionar ativo
+  			function addActive(x){
+  				//Fuunção para classificar os itens ativos
+  				if(!x) return false;
+  				//Início da classe de excluir os itens ativos
+  				removeActive(x);
+  				if(currentFocus >= x.length) currentFocus = 0;
+  				if(currentFocus < 0) currentFocus = x.length -1;
+  				//Adicionar a classe autocompletar ativo
+  				x[currentFocus].classList.add('autocomplete-active');
+  			}
+  			function removeActive(x){
+  				//Remoção da classe de todos os itens de autocomplete
+  				for(var i = 0; i < x.length; i++){
+  					x[i].classList.remove('autocomplete-active');
+  				}
+  			}
+  			function closeAllLists(elmnt){
+  				//Fechar todas as lista de autocompletar do documento exceto as que foram passada
+  				var x = document.getElementsByClassName('autocomplete-items');
+  				for(var i = 0; i < x.length; i++){
+  					if(elmnt != x[i] && elmnt != inp){
+  						x[i].parentNode.removeChild(x[i]);
+  					}
+  				}
+  			}
+  			//Executar a função quando alguém clica no campo
+  			document.addEventListener('click', function(e){
+  				closeAllLists(e.target);
+  			});
+  		}
+  		
+  		var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+  		autocomplete(document.getElementById('meupais'), countries);
+  	</script>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

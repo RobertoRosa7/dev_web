@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+
+    <title>Alinhameneto no Grid - Bootstrap4</title>
+    <style>
+      body{
+        margin-bottom:200px;
+      }
+      .marcador{
+        background:#fe9d9d;
+        border:1px solid #f94646;
+        height:120px;
+      }
+      .marcador-container{
+        background:#5bf946;
+        border:1px solid #36ae26;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Alinhameneto no as grid do bootstrap4 -->
+    <h1 class="display-3 text-black-50">Alinhameneto no Grid - Bootstrap4</h1><hr>
+    <div class="container">
+    
+      <h2>Alinhamento vertical em grupo - align-items-start/center/end</h2>
+      <div class="row marcador align-items-center">
+        <div class="col border border-primary">área 1</div>
+        <div class="col border border-primary">área 2</div>
+        <div class="col border border-primary">área 3</div>
+      </div>
+
+      <h2>Alinhamento vertical individual - align-self-start/center/end</h2>
+      <div class="row marcador">
+        <div class="col border border-primary align-self-start order-1">área 1</div>
+        <div class="col border border-primary align-self-end order-3">área 2</div>
+        <div class="col border border-primary align-self-center order-2">área 3</div>
+      </div>
+
+      <h2>Alinhamento horizontal colunas - justify-content-start/center/end</h2>
+      <div class="row marcador justify-content-center">
+        <div class="col-2 border border-primary">área 1</div>
+        <div class="col-2 border border-primary">área 2</div>
+        <div class="col-2 border border-primary">área 3</div>
+      </div>
+
+      <h2>Distribuição de espaços - justify-content-around/between</h2>
+      <div class="row justify-content-between border border-primary">
+        <div class="col-2 marcador">área 1</div>
+        <div class="col-2 marcador">área 2</div>
+        <div class="col-2 marcador">área 3</div>
+      </div>
+      
+      <!-- no-gutters - remove espaçamentos internos dos items, tipo um padding -->
+      <h2>Remover os espaços</h2>
+      <div class="row no-gutters border-primary border">
+        <div class="col-2 marcador">área 1</div>
+        <div class="col-2 marcador">área 2</div>
+        <div class="col-2 marcador">área 3</div>
+      </div>
+
+    </div><!--fim container-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

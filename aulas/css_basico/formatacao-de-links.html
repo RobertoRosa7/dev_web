@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Links</title>
+
+	<style>
+	/**
+	* z-index: define qual dos elementos sobrepostos deve vir primeiro na tela, isto é,
+	* qual dos elementos irá ficar na frente. Os elementos que tiver maior valor ficará
+	* na frente em relação aos elementos de menor valor.
+	*/
+	body {
+		background-color: #eee;
+		font-family: Helvetica, monospace, serif;
+	}
+	
+	a {
+		color: blue;
+		font-size: 20px;
+		padding:5px;
+		text-decoration: none;
+	}
+	
+	a:link {
+		color: orange;
+	}
+	
+	a:visited {
+		color: #c0c0c0;
+	}
+
+	a:hover {
+		color: purple;
+		background-color: #fafafa;
+		border-radius: 20px 20px;
+	}
+
+	a:active {
+		color: black;
+	}
+	p {
+		font-size: 18px;
+		color: gray;
+		text-indent: 20px;
+	}
+	#container {
+		background-color: #fff;
+		box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+		width: 920px;
+		height: 500px;
+		padding: 5px;
+		margin: 10px auto;
+		position: relative;
+	}
+	#links {
+		text-align: center;
+		background-color: #666;
+		padding: 5px;
+	}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		
+		<h1 align="center"><em>Formatação de Links</em></h1>
+
+		<div id="links">
+			<a href="https://www.google.com.br">Google</a> |
+			<a href="https://www.tecmundo.com.br">Tec Mundo</a> |
+			<a href="https://www.comandotorrents.com">Comando Torrents</a> |
+			<a href="https://www.sempreupdate.com.br">Sempre Update</a>
+		</div>
+
+		<p>Os <strong>links</strong> tem estados, quando há cliques e não há, isto é, sempre que tiver
+		um links, ele terá um estado se foi ou não clicado, com isso podemos perceber
+		que houve ou não visitado.</p>
+
+		<p>
+			O primeiro estado do link é <em>&quot;não visitado&quot;</em> isso significa que não
+			foi clicado e este é seu estado padrão.<br>
+			<span style="margin-left:50px">a:link {}</span> -> cor <strong>laranja</strong><br>
+			<span style="margin-left:50px">a:visited {}</span> -> cor <strong>cinza</strong><br>
+			<span style="margin-left:50px">a:hover {}</span> -> <strong>efeito</strong> ao passar mouser cor <strong>roxo</strong><br>
+			<span style="margin-left:50px">a:active {}</span> -> link ativo, ao clicar e segurar o clique cor <strong>black</strong>
+		</p>
+
+	</div>	
+
+</body>
+
+</html>

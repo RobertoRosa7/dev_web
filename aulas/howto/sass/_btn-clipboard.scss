@@ -1,0 +1,11 @@
+// button to copy
+#btn-to-copy{
+    border:none;
+    outline:none;
+    color:white;
+    background:dodgerblue;
+    padding:6px 24px;
+    &:hover{
+        opacity:.8;
+    }
+}

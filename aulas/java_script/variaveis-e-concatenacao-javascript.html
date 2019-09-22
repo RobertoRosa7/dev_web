@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/
+    GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>Variáveis JavaScript no HTML</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+
+      <!-- variáveis -->
+      <h1 class="text-center">Variáveis JavaScript </h1>
+
+      <div class="row my-5">
+        <div class="col-md-6 border-right">
+          <h3 class="bg-warning text-center">Varáveis Introdução</h3>
+          <p>O que são variáveis?</p>
+
+          <span class="bg-light p-3">Tipos de variáveis</span>
+          <span> = String - Number - Boolean</span><br><br>
+          <p>String = (str) conjutnto de caracteres</p>
+          <p>Number = (int ou float) reservador para números inteiro ou reais</p>
+          <p>Boolean = false ou true - verdadeiro ou falso</p>
+
+          <h3 class="bg-warning text-center">Regras para declração de variáveis</h3>
+          <p class="text-primary">Não podem ser iniciados com números, apenas com letras ou "_"</p>
+          <p class="text-primary">Não podem conter caracteres especiais com: "ç, &, @ etc..."</p>
+          <p class="text-primary">Não podem ser iguais as palavras reservadas pela linguagem</p>          
+        </div>
+        
+        <div class="col-md-6">
+          <h3 class="bg-warning text-center">Declaração de variáveis com "var"</h3>
+          <p class="d-inline-block bg-light p-3">Exemplos:</p>
+          <p>
+            var <span class="text-success">nome</span>,
+            var <span class="text-success">AutoVariavel</span>,
+            var <span class="text-succes">_idade</span>
+          </p>
+          <p class="bg-light p-3 d-inline-block">Exemplo Errado:</p>
+          <p>
+            var <span class="text-danger">123nome</span>,
+            var <span class="text-danger">número</span>
+          </p>
+          <h3 class="bg-warning text-center">Variáveis null e undefined</h3>
+          <p>
+            São valores nativamente do javascript, assim como boolean, number e string. A diferença representa
+            a intenção de algum valor, isto é, uma variável existente mas sem valor no seu endereço de momória.
+          </p>
+          <p>Undefined, realmente não possui nenhum valor na variável</p>
+        </div>
+      </div>
+      <hr>
+      
+      <!-- concatenação -->
+      <h1 class="text-center">Concatenação</h1>
+      <div class="row my-5">
+        <div class="col-md-6">
+          <h3 class="bg-success text-center">O que é concatenação</h3>
+          <p class="text-justify">
+            Concatenação é juntar os valores que estão nas variáveis, de forma a montar string ou textos personalizados. Permite aplicar determinados contéudo decorrente da aplicação.
+          </p>
+          <p class="bg-light p-3 d-inline-block">Exemplo:</p>
+          <p>Texto inserido através do javascript document.write</p>
+          <script>
+            // null
+            // var teste = null;
+
+            //undefined
+            // var teste2 = undefined;
+
+            // var nome = prompt('Digite o seu nome')
+            // var idade = prompt('Digite a sua idade')
+            // document.write('<h3 class="text-center">Olá, ' + '<span class="text-danger">' + nome + '</span>' + ' tudo bem? A sua idade é de ' + '<span class="text-danger">'+ idade +'</span> anos</h3>')
+          </script>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <script src="js/meu-javascript.js"></script>
+  </body>
+</html>

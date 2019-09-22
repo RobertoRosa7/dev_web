@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <!--add library icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>HTML | CSS | javaScript</title>
+</head>
+<body>
+    <!-- Images used to open the lightbox -->
+<div class="row">
+    <div class="column">
+        <img class="img-box" src="../img/tie-glasses-1366x768.jpg" alt="Tie Glasses" onclick="window.default.openModal();window.default.currentSlide(1)">
+    </div>
+    <div class="column">
+        <img class="img-box"src="../img/lamp-minimalism-1366x768.jpg" alt="Lamp Minimalism" onclick="window.default.openModal();window.default.currentSlide(2)">
+    </div>
+    <div class="column">
+        <img class="img-box"src="../img/ispiron_15_5000_Laptops_Intel_mod8.jpg" alt="Ispirion Laptop" onclick="window.default.openModal();window.default.currentSlide(3)">
+    </div>
+    <div class="column">
+        <img class="img-box" src="../img/techblog-imagem1.jpg" alt="Technology" onclick="window.default.openModal();window.default.currentSlide(4)">
+    </div>
+</div> 
+<!-- The Modal/Lightbox -->
+<div class="modal" id="my-modal">
+    <span class="close cursor" onclick="window.default.closeModal()">&times;</span>
+    <div class="content-modal">
+
+        <div class="my-slides">
+            <div class="numbertext">1 / 4</div>
+            <img class="" src="../img/tie-glasses-1366x768.jpg">
+        </div>
+        <div class="my-slides">
+            <div class="numbertext">1 / 4</div>
+            <img class="" src="../img/lamp-minimalism-1366x768.jpg">
+        </div>
+        <div class="my-slides">
+            <div class="numbertext">1 / 4</div>
+            <img class="" src="../img/ispiron_15_5000_Laptops_Intel_mod8.jpg">
+        </div>
+        <div class="my-slides">
+            <div class="numbertext">1 / 4</div>
+            <img class="" src="../img/techblog-imagem1.jpg">
+        </div>
+
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="window.default.pushSlide(-1)">&#10094;</a>
+        <a class="next" onclick="window.default.pushSlide(1)">&#10095;</a>
+
+         <!-- Caption text -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail image controls -->
+        <div class="column">
+            <img class="demo img-box" src="../img/tie-glasses-1366x768.jpg" onclick="window.default.currentSlide(1)" alt="Tie Glasses">
+        </div>
+      
+        <div class="column">
+            <img class="demo img-box" src="../img/lamp-minimalism-1366x768.jpg" onclick="window.default.currentSlide(2)" alt="Lamp Minimalism">
+        </div>
+      
+        <div class="column">
+            <img class="demo img-box" src="../img/ispiron_15_5000_Laptops_Intel_mod8.jpg" onclick="window.default.currentSlide(3)" alt="Ispirion Laptop">
+        </div>
+      
+        <div class="column">
+            <img class="demo img-box" src="../img/techblog-imagem1.jpg" onclick="window.default.currentSlide(4)" alt="Technology">
+        </div>
+
+    </div>
+</div>
+ <script src="../js/default.js"></script>
+</body>
+</html>

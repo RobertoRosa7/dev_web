@@ -1,0 +1,33 @@
+// style tab from button
+.tab-hover{
+    float:left;
+    border:1px solid #ccc;
+    background-color:#f1f1f1;
+    width:30%;
+    height:300px;
+}
+// buttons
+.tab-hover .toggle-tab-hover-link{
+    display:block;
+    background-color:inherit;
+    color:black;
+    padding:22px 16px;
+    width:100%;
+    border:none;
+    outline:none;
+    text-align: left;
+    cursor:pointer;
+    &:hover{
+        background: #ddd;
+    }
+}
+// content tab
+.toggle-tab-hover-content{
+    float:left;
+    padding:0 12px;
+    border:1px solid #ccc;
+    width:70%;
+    height:300px;
+    border-left:none;
+    display:none;
+}

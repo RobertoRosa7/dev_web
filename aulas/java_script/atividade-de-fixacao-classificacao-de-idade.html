@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/
+    GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <h4 class="display-4 bg-warning text-center">Atividade de fixação</h4>
+          <h3>Classifique a idade que for inserida</h3>
+         
+           <!-- JavaScript (Opcional) -->
+          <script>
+            var idade = prompt('Digite sua idade:');
+            // var crianca = (idade <= 15) ? 'Criança' : 'Não é uma criança';
+            // var jovem = (idade >= 15 && idade < 30) ? 'Jovem' : 'Criança';
+            // var adulto = (idade >= 30 && idade < 60) ? 'Adulto' : 'Jovem';
+            // var idoso = (idade >= 60) ? 'Idoso' : 'Jovem';
+
+            if(idade <= 15){
+              document.write('Criança');
+            }else if(idade >= 15 && idade < 30){
+              document.write('Jovem');
+            }else if(idade >=30 && idade < 60){
+              document.write('Adulto');
+            }else if(idade >= 60){
+              document.write('Idoso');
+            }
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

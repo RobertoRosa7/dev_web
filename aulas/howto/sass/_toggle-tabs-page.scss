@@ -1,0 +1,40 @@
+// full page height full 100%
+html, body{
+    height:100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+// tab link
+.toggle-tab-page-link{
+    background-color:#555;
+    color:white;
+    float:left;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:14px 16px;
+    font-size:17px;
+    width:25%;
+    &:hover{
+        background-color:#777;
+    }
+}
+// style tab content
+.toggle-tab-page-content{
+    color:white;
+    display:none;
+    padding:100px 20px;
+    height:100%;
+}
+.red {
+    background: red;
+}
+.blue{
+    background: blue;
+}
+.orange{
+    background:orange;
+}
+.green {
+    background:green;
+}

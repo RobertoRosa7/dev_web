@@ -1,0 +1,82 @@
+.column{
+    float:left;
+    width:25%;
+}
+.line:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+// custom container label
+.container{
+    display:block;
+    position:relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor:pointer;
+    font-size:22px;
+    user-select: none;
+}
+// hide the browser's checkbox default
+.container input{
+    position:absolute;
+    cursor:pointer;
+    opacity:0;
+    width:0;
+    height:0;
+}
+// create a custom checkbox
+.checkmark,
+.checkmark-radio{
+    position:absolute;
+    top:0;
+    left:0;
+    width:25px;
+    height:25px;
+    background:#eee;
+}
+.checkmark-radio{
+    border-radius:50%;
+}
+// on hover add background gray
+.container:hover input ~ .checkmark,
+.container:hover input ~ .checkmark-radio{
+    background:#ccc;
+}
+// when button checked background color is blue
+.container input:checked ~ .checkmark,
+.container input:checked ~ .checkmark-radio{
+    background:dodgerblue;
+}
+// create checkmark indicator - hidden when not checked
+.checkmark:after,
+.checkmark-radio:after{
+    content:'';
+    position:absolute;
+    display:none;
+}
+// show checkmark indicator when checked
+.container input:checked ~ .checkmark:after,
+.container input:checked ~ .checkmark-radio:after{
+    display:block;
+}
+// set style of checkmar indicator - simbol right
+.container .checkmark:after{
+    left:9px;
+    top:5px;
+    border:solid white;
+    width:5px;
+    height: 10px;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.container .checkmark-radio:after{
+    top:9px;
+    left:9px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+}

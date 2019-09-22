@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+    <style>
+
+      .caixa{
+        background:#ccc;
+        width:150px;
+        height:150px;
+        float:left;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container border">
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <h4 class="display-4 bg-warning text-center">Eventos</h4>
+          <div class="row no-gutters">
+               <!-- evento mouse-->
+
+            <div onclick="evento()" class="caixa col-2">
+              <p>Eventos Mouse</p>
+            </div>
+
+            <div class="form-group col-10 pl-4">
+
+               <!-- evento teclado -->
+               <label for="">Eventos teclado</label>
+              <input type="text" class="form-control" onkeypress="acao1()" placeholder="digite um caracter">
+              <input type="text" class="form-control" onfocus="console.log('teste-focus')" onblur="console.log('perdeu o focus')">
+
+              <select class="form-control" name="" id="" onchange="console.log('estado foi modificado')">
+                <option value="">--- selecione ---</option>
+                <option value="1">primeira opção</option>
+                <option value="2">segunda opção</option>
+
+              </select>
+
+            </div>
+
+          </div>       
+
+           <!-- JavaScript (Opcional) -->
+          <script>
+            /**
+            * Eventos:
+            * São ações capturada pelo browser realizada pelo usuários, então um usuário realiza uma ação
+            * o browser considera está ação como um evento.
+            * 
+            * Ex:
+            * Movimento do mouse;
+            * - cliques;
+            * - redimensionamento da tela;
+            * - aplicação do foco do cursor do mouser;
+            * - um elemento do formulário;
+            * - o processo de carregamento do browser da página;
+
+            * Eventos - Mouse
+            * - onclick = atributo que dispara quando há clique no elemento
+            * - ondblclick = dispara o elemento quando há duplo clique sobre
+            * - onmouseup = dispara o elemento quando o clique é solto, se pressionado nada aconteceu
+            * - onmouseover = disopara o elemento quando o cursor passar sobre o elemento
+            * - onmouseout = dispara o elemento quando o cursor sair de sobre o elemento
+            *
+            * Obs:
+            * Há elementos que não são suportados pelo disparo de eventos - para consultar os elementos
+            * que são suportados - https://www.w3schools.com/jsref/dom_obj_event.asp
+            * 
+            * Eventos - Teclado
+            * - onkeydown = acionado no momento que uma tecla é pressionada
+            * - onkeyup = acionado no momento que a tecla é liberada
+            * - onkeypress = acionado no momento que a tecla fica pressionada que  representa um caracter
+            *
+            * Eventos - Janela
+            * - onresize
+            * - onscroll
+            *
+            * Eventos - Formulários
+            * - onfocus = acionado quando há o clique
+            * - onblur = acionado quando o elemento perde o focus
+            * - onchange = acionado quando o estado do elemento é modificado
+            */
+            function acao1(){
+              alert('Evento disparado');
+            }
+
+            function evento(){
+              alert('Houve um clique no elemento');
+            }
+            function evento2(){
+              alert('O mouse deixo a área do elemento');
+            }
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

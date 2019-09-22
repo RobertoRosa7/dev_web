@@ -1,0 +1,87 @@
+*{ box-sizing: border-box;}
+
+html,body{
+    height:100%;
+}
+body{
+    background: #121212;
+}
+.root{
+    position:relative;
+    height:100%;
+
+}
+.nucle{
+    height:65%;
+    width:40%;
+    position:absolute;
+    top:15%;
+    left:-20%;
+    border:1px solid white;
+    border-radius:100%;
+    color:white;
+}
+.text-1,.text-2,.text-3,.text-4,.text-5,.text-6,.text-7{
+    position:absolute;
+    border:1px solid white;
+    min-width:200px;
+    min-height:100px;
+
+}
+.text-1{
+    top:-35%;
+    right:93px;
+    transform: rotate(-76deg);
+    border:1px solid red;
+
+}
+.text-2{
+    top:-25%;
+    right:-28px;
+    transform: rotate(-60deg);
+    border:1px solid blue;
+
+}
+.text-3{
+    top:-6%;
+    right:-129px;
+    transform: rotate(-43deg);
+    border:1px solid green;
+
+}
+.text-4{
+    top:27%;
+    right:-199px;
+    transform: rotate(-11deg);
+    border:1px solid yellow;
+
+}
+.text-5{
+    top:65%;
+    right:-179px;
+    transform: rotate(25deg);
+    border:1px solid palevioletred;
+
+}
+.text-6{
+    top:93%;
+    right:-88px;
+    transform: rotate(52deg);
+    border:1px solid purple;
+
+}
+.text-7{
+    top:108%;
+    right:46px;
+    transform: rotate(-105deg);
+    border:1px solid darkcyan;
+
+}
+.line-4{
+    border:1px solid #444;
+    width:100%;
+    height:10px;
+    position:absolute;
+    top:50%;
+    left:0;
+}

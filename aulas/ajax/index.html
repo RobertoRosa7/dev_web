@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Requisições Assincrônas</title>
+		
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="xmltojson.js"></script>
+		
+		<script>
+			/**
+			* Passo 01: criar objeto XMLHttpRequest
+			* Passo 02: encapsular em uma função
+			* Passo 03: ajax.open()
+			* Passo 04: ajax.send()
+			* Passo 05: verificar os estados da requisição - readyState
+			* Passo 06: métdo ficar de olho no progresso da requisição
+			* Passo 07: criar um git animado para o cliente enquanto o estado não finaliza
+			* Passo 08: verificar a requisição se foi ou não até estado 4
+			* Passo 09: verificar se a inclusão do conteúdo já existe na página
+			* Passo 10: verificar o status da página 200 ou 404
+			* Passo 11: inserção de texto no documento e remoção do gif devido ao innerHTML
+			* Passo 12: remover requicius de nó filhos da div conteúdo deve vir primeiro 
+			* Passo 13: adicionar o atributo responseText - que traz o conteúdo a ser mostrado na página
+			*/
+
+			
+			// encapsular a requisição em uma função 
+			function requisitarPagina(url){
+				// remover qualquer no filho que a div possui
+				document.getElementById('conteudo').innerHTML = ''
+				
+				// verificação se caso não exista o gif de loading
+				if(!document.getElementById('loading')){
+					// criar um gif
+					let imgLoading = document.createElement('img')
+					imgLoading.id = 'loading'
+					imgLoading.src = 'loading.gif'
+					imgLoading.className = 'rounded mx-auto d-block'
+					document.getElementById('conteudo').appendChild(imgLoading)
+				}
+			
+				// criando um novo objeto para xmlhttprequest
+				let ajax = new XMLHttpRequest()
+
+				// state = 0, requisição não inicializada
+				//console.log(ajax.readyState)
+				// metodo open() responsável pela url requisitada
+				ajax.open('GET', url)
+				// state = 1, conexão estabelecida com servidor
+				//console.log(ajax.readyState)
+
+				// alguma logica que fique de olhando o progresso da requisição 
+				ajax.onreadystatechange = () => {
+					if(ajax.readyState == 4 && ajax.status == 200){
+
+						document.getElementById('conteudo').innerHTML = ajax.responseText
+						//document.getElementById('conteudo').innerHTML = 'Requisição finalizada com sucesso! Status 200.'
+						//console.log('requisição finalizada com sucesso! O status 200')
+						//document.getElementById('loading').remove()
+					}
+					//console.log(ajax.readyState)
+					if(ajax.readyState == 4 && ajax.status == 404){
+						document.getElementById('conteudo').innerHTML = '... Erro página não encontrada! :('
+						//console.log('requisição finalizada, porém o recurso solicitado não foi encontrado, status 404')
+						//document.getElementById('loading').remove()
+					}
+				}
+				//console.log(ajax)
+				ajax.send()
+			}
+
+			/** ReadyState
+			* Cada requisição feita pelo XMLHttpRequest passa por cinco estado diferentes
+			* 
+			* 0 -> request not inicialized (requisição não inicializada)
+			* 1 -> server request established (conexão estabelicida no servidor)
+			* 2 -> request receive (requisição recebida)
+			* 3 -> processing request (processando requisição)
+			* 4 -> request finished and response is ready (requisição finalizada)
+			*/
+			function listarFilmes(url){
+				let xml = new XMLHttpRequest()
+				xml.open('GET', url)
+
+				xml.onreadystatechange = () => {
+					if(xml.readyState == 4 && xml.status == 200){
+						let XMLFilmes = xml.responseText
+						let parser = new DOMParser()
+
+						/* conversão do xml para json - este método espera dois parâmetro o primeiro é a string
+						* a variável que contém o xml, no segundo parâmetro qual é anotação usada para a fazer
+						* composição dessa string, para que o DOM converta em uma árvore de elementos
+						* text/html | text/json | text/xml
+						*/
+						let domFilmes = parser.parseFromString(XMLFilmes, 'text/xml')
+						//console.log(domFilmes)
+						
+						jsonFilmes = xmlToJson(domFilmes)
+						//console.log(jsonFilmes)
+
+						for(let i in jsonFilmes['filmes']['filme']){
+							//verificar cada um dos índice contido em jsofilmes
+							let item = jsonFilmes['filmes']['filme'][i]
+
+							// limpeza que evita a repetição caso seja clicado duas vezes
+							
+							// verificação se não existe o elemento 
+							if(document.getElementById('lista')){
+
+								//criando um novo elemento
+								let divRow = document.createElement('div')
+								divRow.className = 'row'
+								let divCol = document.createElement('div')
+								divCol.className = 'col'
+
+								// criando os elemento de conteúdo
+								let p1 = document.createElement('p')
+								p1.innerHTML = '<strong>Título:</strong> ' + item['titulo']['#text']
+
+								let p2 = document.createElement('p')
+								p2.innerHTML = '<strong>Resumo:</strong> ' + item['resumo']['#text']
+
+								let genero = ''
+								for(let g in item.genero){
+									if(genero) genero += ', '
+									genero += item.genero[g]['#text']
+								}
+
+								let p3 = document.createElement('p')
+								p3.innerHTML = '<strong>Gênero:</strong> ' + genero
+
+								let elenco = ''
+								for(let e in item.elenco.ator){
+									if(elenco) elenco += ', '
+									elenco += item.elenco.ator[e]['#text']
+								}
+
+								let p4 = document.createElement('p')
+								p4.innerHTML = '<strong>Elenco:</strong> ' + elenco
+
+								let p5 = document.createElement('p')
+								p5.innerHTML = '<strong>Data de Lançamento:</strong> ' + item.dataLancamento['#text'] + ' (' + item.dataLancamento['@attributes']['pais'] + ')'
+
+								let hr = document.createElement('hr')
+
+								// adicionando os elementos 
+								divRow.appendChild(divCol)
+								divCol.appendChild(p1)
+								divCol.appendChild(p2)
+								divCol.appendChild(p3)
+								divCol.appendChild(p4)
+								divCol.appendChild(p5)
+								divCol.appendChild(hr)
+
+								document.getElementById('lista').appendChild(divRow)
+							}
+						}
+					}
+					if(xml.readyState == 4 && xml.status == 404){
+						//...
+					}
+				}
+				xml.send()
+			}
+			function getEnderecoCEP(cep){
+
+					let url = `https://viacep.com.br/ws/${cep}/json/unicode/`
+					//console.log(url)
+					
+					let ajax = new XMLHttpRequest()
+
+					ajax.open('GET', url)
+
+					ajax.onreadystatechange = () => {
+
+						if(ajax.readyState == 4 && ajax.status == 200){
+
+							let dadosJSONText = ajax.responseText
+							let dadosJSONObj = JSON.parse(dadosJSONText)
+
+							document.getElementById('endereco').value = dadosJSONObj.logradouro
+							document.getElementById('bairro').value = dadosJSONObj.bairro
+							document.getElementById('cidade').value = dadosJSONObj.localidade
+							document.getElementById('uf').value = dadosJSONObj.uf
+							console.log(dadosJSONObj)
+						}
+					}
+
+					ajax.send()
+				}
+		</script>
+		<style>
+			.menuSide {
+				border-right:1px solid #ddd;
+			}
+			.menuSide a{
+				font-size: 14px;
+				padding:8px 0px;
+				padding-left: 5px;
+				text-decoration: none;
+			}
+			.menuSide a:hover{
+				background: #eee;
+				border-radius:0px 500px 500px 0px;
+				border-left:1px solid DodgerBlue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- Static navbar -->
+	    <nav class="navbar navbar-light bg-light mb-4">
+	      <div class="container">
+	        <div class="navbar-brand mb-0 h1">
+	        	<h3>Requisições síncronas e assíncronas</h3>
+	        </div>
+	      </div>
+	    </nav>
+
+
+	    <div class="container">
+
+	    	<div class="row mb-2">
+	    		<div class="col-md-4 center"></div>
+	    		<div class="col-md-4 center">
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_5_conteudo.html')">Página 1</a>
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_2_conteudo.html')">Página 2</a>
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_3_conteudo.html')">Página 3</a>
+
+	    		</div>
+	    		<div class="col-md-4 center"></div>
+	    	</div>
+	    	
+	    	<div class="row">
+		    	<div class="col-md-3 align-self-start menuSide">
+	    			<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('catalago-filmes.html')">Catalogo de Filmes</a>
+	    			<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('app_pesquisa_endereco/index2.html')">App de Pesquisa endereço</a>
+		    		<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('xml-introducao.html')">XML Introdução</a>
+		    		<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('recuperando-xml-do-servidor.html')">Recuperando XML do Servidor</a>
+		    		<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('convertendo-xml-para-json.html')">Convertndo XML para JSON</a>
+		    		<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('listando-filmes-na-pagina.html')">Listando Filmes na Página</a>
+		    		<a href="#" class="text-black-50 d-block" onclick="requisitarPagina('refactoring-backend-usando-json.html')">Refactoring back-end usando JSON</a>
+
+		    	</div>
+		    	<div class="col-md-7 align-self-start" id="conteudo">
+		    		<!-- Conteúdo será carregado pelo Ajax-->
+		    		<div class="container" id="lista">
+		    		</div>
+				<div class="col-md-2 align-self-start"></div>
+			</div>
+		</div>	
+	</body>
+</html>

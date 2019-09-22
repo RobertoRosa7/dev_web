@@ -1,0 +1,70 @@
+// style the image used to trigger the modal
+#my-img{
+    border-radius:5px;
+    cursor:pointer;
+    transition: .3s;
+    &:hover{
+        opacity:.7;
+    }
+}
+// the modal background
+.modal {
+    display:none; // hidden by default
+    position:fixed; // stay on place
+    z-index: 1; // sit on top
+    padding-top:100px; // location of the box
+    left:0;
+    top:0;
+    width:100%; // full screen
+    height: 100%; // full screen
+    overflow:auto;
+    background-color:rgb(0,0,0); // fallblack background
+    background-color:rgba(0,0,0,0.9); // opacity
+}
+// content modal
+.modal-content{
+    margin: auto;
+    display:block;
+    width:80%;
+    max-width:700px;
+}
+// caption of the image
+#caption{
+    margin:auto;
+    display:block;
+    width:80%;
+    max-width:700px;
+    text-align:center;
+    color:#ccc;
+    padding:10px 0;
+    height:150px;
+}
+// animation modal - zoom in
+.modal-content, #caption{
+    animation-name: zoom;
+    animation-duration: .6s;
+}
+@keyframes zoom{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+// the close button
+.close{
+    position:absolute;
+    top:15px;
+    right:35px;
+    color:#f1f1f1;
+    font-size:40px;
+    font-weight: bold;
+    transition: .3s;
+    &:hover, &:focus{
+        color:#bbb;
+        text-decoration: none;
+        cursor:pointer;
+    }
+}
+@media screen and (max-width:768px){
+    .modal-content{
+        width:100%;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+    <!-- Your custom script here -->
+    <script type="text/babel">
+
+    //função que calcula o quadrado de um número
+    /*let quadrado = function(x = 5){
+      return x * x;
+    }
+    */
+
+    // para chamar um função que esta encapsulada numa variável, basta usar o nome da variável seguido de parêntese
+    //document.write(quadrado(3));
+
+    //usando arrow functions
+    /*let quadrado = (x) => {
+      return x * x;
+    }
+    */
+
+    // recurso de return implicito do ES6
+    //let soma = (x = 5) => x + x;
+
+    // função para verificar os números se é par ou impar
+    /*let parOuImpar = (num = 0) => {
+      if(num % 2 === 0){
+        return 'par';
+      }else{
+        return 'impar';
+      }
+    }
+    */
+
+    // usando operador ternário
+    let parOuImpar = (num = 0) => num % 2 === 0 ? 'par' : 'ímpar';
+    console.log(parOuImpar(144));
+    </script>
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Funções arrow</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Arrow functions</h3>
+          <p class="text-justify">
+            Para criar um arrwo function, não é preciso usar o termo <i>function</i> basta usar parêntese seguido
+            de (sinal de igual com sinal de maior =>) assim parecido com uma flexa.
+          </p>
+
+          <p class="text-justify">
+          </p>
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

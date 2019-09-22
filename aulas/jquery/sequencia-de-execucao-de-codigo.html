@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JQuery</title>
+		<link rel="icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<script>
+			// não irá funcionar porque o elemento selecionado ainda não existe no DOM
+			//function teste(){console.log($('#exemplo'))}teste()
+
+			// função que primeiro carrega todos os elemento do DOM para depois executar
+			//$(document).ready(function(){function teste(){console.log($('#exemplo'))}teste()})
+
+			// técnica de wrapper - tem o mesmo fim, mas deve passar somente a referência da função
+			//function teste(){console.log($('#exemplo'))}$(teste)
+
+			// técnica de callback - função anomima
+			//$(function(){console.log($('#exemplo'))})
+
+		</script>
+		<div id="exemplo">teste</div>
+	</body>
+	<script>
+		// Formas tradicionais com JS puro			// Usando JQuery
+		// <body onload="funcao()">					//$(document).ready(function(){})
+		// window.onload = function(){}				//$(functio(){})
+		
+		/*
+		* A forma como o browser realiza a renderização dos elementos é gravitacional, isto é, a criação dos elementos
+		* é de cima para baixo, portanto, somente podemos selecionar um elemento após ter sido criado, antes disso -
+		* ele ainda não existe - a ordem de precedência de ser respeitada.
+		*/
+		//console.log($('#exemplo'))
+	</script>
+</html>

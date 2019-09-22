@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Modal Básico</title>
+    <style>
+        .highlights-button{
+            display:inline-block;
+            padding:10px 15px 8px;
+            cursor:pointer;
+            border-radius:3px;
+            border:1px solid #ccc;
+            background: #ececec;
+            -webkit-transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+            transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+        }
+        .highlights-button:hover{
+            border:1px solid #ececec;
+            background:#ccc;
+        }
+        .modal{
+            position:fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            z-index:10;
+            opacity:0;
+            visibility: hidden;
+            -webkit-transition: all 0.5s 0.5s ease-in-out;
+            transition: all 0.5s 0.5s ease-in-out;
+        }
+        .modal-content{
+            padding:10px;
+            max-width: 600px;
+            min-width:360px;
+            max-height:85%;
+            overflow:auto;
+            position:absolute;
+            top:5%;
+            left:50%;
+            z-index:2;
+            border-radius:3px;
+            background:#fff;
+            -webkit-transform: translate(-50%,0);
+            -moz-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        .modal-content img{
+            display:block;
+            width:100%;
+            margin:10px 0 0;
+        }
+        .modal-close{
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            background-color:rgba(0,0,0,0.4);
+        }
+        .btn-close-modal:after{
+            content: 'X';
+            float:right;
+            margin:5px 0;
+            width:30px;
+            height:30px;
+            position:relative;
+            z-index:3;
+            text-align:center;
+            line-height: 30px;
+            cursor:pointer;
+            border-radius:30px;
+            background-color:rgba(255,255,255,0.8);
+            box-shadow: 0 0 3px #000;
+        }
+        input[id*="modal-"]{
+            position:fixed;
+            left: -9999px;
+            top:50%;
+            opacity:0;
+        }
+        input[id*="modal-"]:checked + div.modal{
+            opacity:1;
+            visibility:visible;
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+        input[id*="modal-"]:checked + div.modal .modal-content {
+            opacity: 1;
+            -webkit-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+            -webkit-transition-delay: 0.5s;
+            -ms-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        @media screen and (max-width: 767px) {
+        .modal-content {
+            padding: 10px 5%;
+            min-width: 88%;
+            }
+        }
+    </style>
+  </head>
+  <body>
+      <div class="highlights">
+          <input type="radio" id="radio-img1" name="highlights" style="display:none">
+          <div class="highlights-item">
+              <label for="modal-nature" class="highlights-button">ver fotos</label>
+          </div>
+          <input type="checkbox" id="modal-nature">
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <label for="modal-nature" class="btn-close-modal"></label>
+                        <span>
+                            Feliz natal 
+                        </span>
+                    </div>
+                    <h4>Foto grande modal</h4>
+                    <img src="imagens/cabecalho.jpg" alt="">
+                </div>
+            <label for="modal-nature" class="modal-close"></label>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Título da página  -->
+    <title>Media Queries - Bootstrap4</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+
+    <!-- Estilo customizado -->
+    <style type="text/css">
+
+      /* Small devices (landscape phone) - a formatação será aplicada enquanto
+      a tela for maior ou igual a 576px */
+
+      /* @media (min-width:576px) {body{background:red;}} */
+
+      /* Medium devices (tablets 768px e superior) */
+      /* @media (min-width:768px) {body{background:blue;}} */
+
+      /* Large devices (Notebook 992px e supeior) */
+      /* @media (min-width:992px) {body{background:yellow;}} */
+
+      /* Extra device (Desktop 1200px e superior) */
+      /* @media (min-width:1200px) {body{background:gray;}} */
+
+      /*
+      * Extra Small devices - max-width
+      =======================================================================*/
+      /* Extra Small devices (portraint phone)*/
+      /* @media (max-width:575.98px) {body{background: #870000;}} */
+
+      /* Small devices (landscape phone)*/
+      /* @media (max-width:767px) {} */
+
+      /* Extra Small devices (portraint phone)*/
+      /* @media (max-width:991px) {} */
+
+      /* Extra Small devices (portraint phone)*/
+      /* @media (max-width:1199px) {} */
+      /* ====================================================================*/
+
+      /* Extra Small device */
+      @media (max-width:575.98px){
+        body{
+          background:#870000;
+        }
+        p{
+          color:white;
+        }
+      }
+
+      /* Small device (landscape 576px e superior) */
+      @media (min-width:576px) and (max-width:767.98px){
+        body{
+          background: red;
+        }
+        p{
+          color:white
+        }
+      }
+
+      /* Medium devices (tablets 768px e superior) */
+      @media (min-width:768px) and (max-width:991.98px){
+        body{
+          background:blue;
+        }
+        p{
+          color:white;
+        }
+      }
+
+      /* Large devices (Notebook 992px e supeior) */
+      @media (min-width:992px) and (max-width:1199.98px){
+        body{
+          background:yellow;
+        }
+      }
+
+      /* Extra device (Desktop 1200px e superior) */
+      @media (min-width:1200px){
+        body{
+          background:#efefef;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Título -->
+    <h1 class="display-4 text-center text-primary">Media Queries - Bootstrap4</h1><hr>
+
+    <!-- Tipos de Media -->
+    <!-- all = Todos os tipos de dispositivos -->
+    <!-- aural = sintetizadores de voz -->
+    <!-- braile = leitores de braile  -->
+    <!-- embossed = impressoras de braile -->
+    <!-- handheld = dispositivos pequenos de mão - celulares de tela pequena -->
+    <!-- print = impressoreas comuns - convencionais -->
+    <!-- projection = projetores de apresentações de slides -->
+    <!-- screen = monitores de telas coloridas -->
+    <!-- tty = teleimpressora e terminais -->
+    <!-- tv = televisão -->
+
+    <!-- para fazer a indicação basta inserir no atributo media="print" -->
+    <!-- <link rel="stylesheet" href="print.css" media="print"> -->
+
+    <!-- Resoluções de tela para dispositivos variáveis -->
+    <!-- 320px = smartphone em modo retrato -->
+    <!-- 480px = smartphone em modo paisagem -->
+    <!-- 600px = tablets pequenos - ex: amazon - kindle etc... -->
+    <!-- 768px = tablets maiores em modo retrato - ipad(768x1024) -->
+    <!-- 1024px = tablet maiores em modo paisagem - monitores antigos -->
+    <!-- 1200px = monitores wide -->
+
+    <h2 class="lead text-success">Breakpoint - media queries</h2>
+    <p class="lead text-justify">
+      Para todas as telas de dispositivos há um resolução e o bootstrap usando media queries cuida exatamente de lidar
+      com essas resoluções automaticamente mediante suas configurações de min-width e max-width.
+    </p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

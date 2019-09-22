@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Destructing Assignment</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Destructing Assignment</h3>
+          <p class="text-justify">
+           Desistruturação, retirada de valores dentro de uma estrutura, neste caso foi feito através de um Array
+           assim, para fazer uma destruturação é preciso indicar declaração de variáveis, (let ou const) seguido do
+           colchetes.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="text-justify">
+          Caso precise pular algum índice, basta usar espaço dentro do destructing e se caso adicionar novas variávies
+          a mais, será definido como (undifined). Dá também de adicionar valores padrões dentro do destructing
+        </p>
+        </div>
+      </div>
+    </div><!-- /container -->
+
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    
+
+    /*
+    * É comum usar variáveis com os valores contido dentro do array
+    * Para a utilização do destructing é preciso indicar qual operador de declaração de variávies, pode ser let ou
+    * const, em seguida colchetes mais a referência do array, isto é, o nome da variável que contem o array.
+    *
+    * let [] = frutas;
+    * 
+    * Para pular um índice, basta deixa um espaço dentro do colchete de destruturação.
+    */
+
+    //Destructing de Array
+    let frutas = ['abacaxi', 'laranja', 'uva', 'morango'];
+
+    //let [a,b, ,c] = frutas;
+    //console.log(a,b,c);
+
+    //Destructing de Array Multidimensional
+    let coisas = [['abacaxi', 'laranja', 'uva', 'morango'],['Maria', 'José']];
+    /*
+    * Desconsiderei os primeiros indice do array um e estrair o indice 2 na variável b,
+    */
+   
+    let [[ , ,b],[a,m]] = coisas;
+    console.log(a,m,b);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Pilar da Herança</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Operador super()</h3>
+          <p class="text-justify">
+            Quando um objeto é instanciado, e não recebe nenhum parâmetro, será configurado os valores que estiverem
+            no constructor, assim, o operador super(), fornece acesso a classe pai, com isso ao passar parâmetros no
+            super() será recebido na classe pai. Uma classe filho pode passar parâmetros para a classe pai, modificando
+            assim toda uma cadeia de classes que são extendida pela classe pai. O super() dá acesso ao constructor da classe pai.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3></h3>
+          <p>
+          </p>
+          <!-- Your custom script here -->
+          <script type="text/babel">
+
+          class Animal{
+            constructor(cor, tamanho, peso){
+              this.cor = cor;
+              this.tamanho = tamanho;
+              this.peso = peso;
+            }
+            dormir(){
+              console.log('dormindo');
+            }
+          }
+          class Passaro extends Animal{
+            constructor(bico, cor, tamanho, peso){
+              super(cor, tamanho, peso);
+              this.bico = bico;
+            }
+            voar(){
+              console.log('voando');
+            }
+          }
+          class Papagaio extends Passaro{
+            constructor(falar, cor, tamanho, peso){
+              super('Médio', cor, tamanho, peso);
+              this.falar = falar;
+            }
+            falar(){
+              console.log('falando');
+            }
+          }
+          let papagaio = new Papagaio(true, 'Vermelho', 24, 253);
+          console.log(papagaio);
+          </script>
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

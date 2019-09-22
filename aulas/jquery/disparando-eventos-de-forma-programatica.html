@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JQuery</title>
+		<link rel="icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<style>
+			#div1{
+				height:80px;
+				width:80px;
+				border:1px solid #000;
+			}
+			.emDestaque{
+				background:red;
+			}
+		</style>
+		<script>
+			$(document).ready(() =>{
+				$('#btn2').on('click', () => {
+					alert('btn2 clicado')
+				})
+
+				// trigger() disparar eventos
+				$('#btn1').on('click', () => {
+					$('#btn2').trigger('click')
+				})
+
+				// hover(func1, func2) auxiliar evento mouse
+				/*
+				$('#div1').hover(
+					e => $(e.target).addClass('emDestaque'),
+					e => $(e.target).removeClass('emDestaque')
+				)
+
+				let hover = document.getElementById('div1')
+				hover.onmouseenter = (e) => {
+					e.target.className = 'emDestaque'
+				}
+				hover.onmouseleave = (e) => {
+					e.target.className = ''
+				}
+
+				// modo tradicional
+				$('#div1').on('mouseenter', e => {
+					$(e.target).addClass('emDestaque')
+				})
+				$('#div1').mouseleave(e => {
+					$(e.target).removeClass('emDestaque')
+				})
+				*/
+
+				// toggleClass
+				//$('#div1').toggleClass('emDestaque')
+				$('#div1').hover(e => {
+					$(e.target).toggleClass('emDestaque')
+				})
+			})
+			/*
+			* trigger() -> aciona evento de forma programática
+			* hover() -> função auxiliar na captura de eventos do mouse
+			* toggleClass -> função auxiliar na inclusão e remoção de classe
+			*/
+		</script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<button id="btn1" type="button">btn 1</button>
+			<button id="btn2" type="button">btn 2</button>
+			<hr>
+
+			<div id="div1"></div>
+		</div>
+		
+	</body>
+</html>

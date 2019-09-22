@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Pilar da Herança</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Reutilizável</h3>
+          <p class="text-justify">
+            Significa que podemos usar o mesmo código em diversos outros projetos, sendo reutilizado, isto é, cria
+            o código para um determinado projeto, e reutiliza em outro, podendo ser feito manutenção dele, para que
+            se aplique em diversos outros, portanto, podemos criar um código mestre ou geral e a partir dele criar
+            novos outro código baseado no geral.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3>Manutenção</h3>
+          <p>
+            Com a manutenção dos códigos, podemos reduzir as redundâncias e simplificar ainda mais os códigos, assim
+            para um objeto que é genérico transformá-lo em um objeto específico utilizando o pilar da herança.<br>
+            Para a manutenção ser eficaz, basta adicionar, modificar ou remover qualquer atributo ou método da classe
+            pai (super-classe) para que todas as classes que estendem receber suas alterações.
+          </p>
+          <!-- Your custom script here -->
+          <script type="text/babel">
+            // Classes de Objetos
+            /*
+            * Para uma classe pai herdar seus atributos e métodos para classes filhas é preciso indicar com um
+            * recurso que esta classe receberá uma extensão da super-classe, usando extends seguido do nome da classe
+            */
+
+            // Super Classe
+            class Animal{
+              constructor(){
+                this.cor = '';
+                this.tamanho = null;
+                this.peso = null;
+              }
+              dormir(){
+                console.log('dormir');
+              }
+            }
+            //Sub Classe
+            class Cachorro extends Animal{
+              constructor(){
+                super();
+                this.orelha = 'grande e caída';
+              }
+              comer(){
+                console.log('comer');
+
+              }
+              rosnar(){
+                console.log('rosnar');
+
+              }
+
+            }
+            //Sub Classe
+            class Passaro extends Animal{
+              constructor(){
+                super();
+                this.bico = 'curto';
+              }
+              voar(){
+                console.log('voar');
+
+              }
+            }
+            //Sub Classe
+            class Papagaio extends Passaro{
+              constructor(){
+                super();
+                this.sabeFalar = true;
+
+              }
+            }
+            let cachorro = new Cachorro();
+            let passaro = new Passaro();
+            let papagaio = new Papagaio();
+            console.log(cachorro);
+            console.log(passaro);
+            console.log(papagaio);
+          </script>
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

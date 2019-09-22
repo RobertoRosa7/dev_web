@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parallax</title>
+    <style>
+        /** Configurações básicas **/
+        html, body{
+            margin: 0;
+            font:16px "Lato", sans-serif;
+            color:#777;
+            height:100%; /* truque para o parallax - assim todo imagem terá que cobrir
+            100% da tela*/
+        }
+        h3{
+            text-align:center;
+            text-transform:uppercase;
+            color:#111;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        .conteudo{
+            color:#777;
+            background-color:white;
+            text-align:justify;
+            padding:50px 80px;
+        }
+        /** Efeito Parallax **/
+        .caixa1, .caixa2, .caixa3, .caixa4{
+            position:relative;
+            height:100%; /*para cobrir altura da tela*/
+            opacity:0.7; /*para deixar opaca*/
+            background-repeat:no-repeat; /*para não repetir*/
+            background-size:cover; /* para cobrir toda área da página*/
+            background-position:center; /*para centralizar quando for redimencionada*/
+            background-attachment:fixed; /*para fixar a imagem */
+        }
+        .caixa1{
+            background-image:url(imagens/imagem1.jpg);
+        }
+        .caixa2{
+            background-image:url(imagens/imagem2.jpg);
+        }
+        .caixa3{
+            background-image:url(imagens/imagem3.jpg);
+
+        }
+        .caixa4{
+            background-image:url(imagens/imagem4.jpg);
+
+        }
+        .title-center{
+            position:absolute;
+            left:0;
+            top:50%;
+            width:100%;
+            text-align:center;
+            text-transform:uppercase;
+        }
+        .title-center span.center{
+            color:#fff;
+            background-color:#111;
+            font-size:25px;
+            padding:18px;
+            letter-spacing:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa1">
+        <div class="title-center">
+            <span class="center">passeio de balões!</span>
+        </div>
+    </div>
+    <div class="conteudo">
+        <h3>Parallax</h3>
+        <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste iusto placeat asperiores aliquam excepturi, officiis voluptatem harum animi veniam incidunt ab reprehenderit voluptates inventore aliquid voluptatibus quo in a officia.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste iusto placeat asperiores aliquam excepturi, officiis voluptatem harum animi veniam incidunt ab reprehenderit voluptates inventore aliquid voluptatibus quo in a officia.
+        </p>
+    </div>
+    <div class="caixa2">
+    <div class="title-center">
+            <span class="center">caindo na estrada!</span>
+        </div>
+    </div>
+    <div class="caixa3">
+        <div class="title-center">
+            <span class="center">seja feliz!</span>
+        </div>
+    </div>
+    <div class="conteudo">
+        <h3>Parallax</h3>
+        <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste iusto placeat asperiores aliquam excepturi, officiis voluptatem harum animi veniam incidunt ab reprehenderit voluptates inventore aliquid voluptatibus quo in a officia.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos exercitationem debitis incidunt illo aspernatur dolor perferendis iusto natus eligendi quia, blanditiis doloremque obcaecati omnis tenetur voluptas dignissimos aut odio voluptates?
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste iusto placeat asperiores aliquam excepturi, officiis voluptatem harum animi veniam incidunt ab reprehenderit voluptates inventore aliquid voluptatibus quo in a officia.
+        </p>
+    </div>
+    <div class="caixa4">
+         <div class="title-center">
+            <span class="center">vá em busca de uma aventura!</span>
+        </div>
+    </div>
+</body>
+</html>

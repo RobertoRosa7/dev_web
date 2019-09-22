@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <!--add library icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>toggle tabs</title>
+</head>
+<body>
+    <!--tab links-->
+    <div class="tab">
+        <button id='btn-londom' class="tablinks">Londom</button>
+        <button id='btn-paris' class="tablinks">Paris</button>
+        <button id='btn-tokyo' class="tablinks">Tokyo</button>
+    </div>
+
+ <!--tab content-->
+    <div id="londom" class="tab-content">
+        <h3>Londom</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatibus suscipit harum perspiciatis ratione autem non dignissimos doloremque nemo eaque repellendus commodi cupiditate quaerat, repudiandae eum atque nulla corporis rerum.</p>
+        <span class="topright" onclick="this.parentElement.style.display='none'">x</span>
+    </div>
+
+    <div id="paris" class="tab-content">
+        <h3>Paris</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatibus suscipit harum perspiciatis ratione autem non dignissimos doloremque nemo eaque repellendus commodi cupiditate quaerat, repudiandae eum atque nulla corporis rerum.</p>
+        <span class="topright" onclick="this.parentElement.style.display='none'">x</span>
+    </div>
+
+    <div id="tokyo" class="tab-content">
+        <h3>Tokyo</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatibus suscipit harum perspiciatis ratione autem non dignissimos doloremque nemo eaque repellendus commodi cupiditate quaerat, repudiandae eum atque nulla corporis rerum.</p>
+        <span class="topright" onclick="this.parentElement.style.display='none'">x</span>
+    </div>
+
+ <script src="../js/default.js"></script>
+</body>
+</html>

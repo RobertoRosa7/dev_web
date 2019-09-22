@@ -1,0 +1,4 @@
+1#SmartPhone Nexus#Hardware#Tela quebrada
+4#TV#Software#Atualização, feita com erro
+3#Impressora HP#Impressora#Tinta
+3#Micro-ondas#Hardware#Defeito de fábrica

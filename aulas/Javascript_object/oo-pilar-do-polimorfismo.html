@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Pilar do Polimorfismo</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Reutilizável</h3>
+          <p class="text-justify">
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3>Sobrescrita de Métodos</h3>
+          <p class="text-justify">
+            Quando um método é passado pela herança, seu comportamento pode ser mudado ao filho, assim o mesmo
+            método pode ser sobrescrito na classe filho, portanto, o mesmo método pode ter diferentes comportamentos
+            em relação a classe que será chamado.
+          </p>
+          <!-- Your custom script here -->
+          <script type="text/babel">
+            
+            class Animal{ 
+            constructor(cor, tamanho, peso){
+              this.cor = cor;
+              this.tamanho = tamanho;
+              this.peso = peso;
+            }
+            dormir(){
+              console.log('dormindo');
+            }
+          }
+          class Passaro extends Animal{
+            constructor(bico, cor, tamanho, peso){
+              super(cor, tamanho, peso);
+              this.bico = bico;
+            }
+            voar(){
+              console.log('voando');
+            }
+          }
+          class Papagaio extends Passaro{
+            constructor(falar, cor, tamanho, peso){
+              super('Médio', cor, tamanho, peso);
+              this.falar = falar;
+            }
+            falar(){
+              console.log('falando');
+            }
+          }
+          class Avestruz extends Passaro{
+            constructor(){
+              super('Grande', 'Branco e Preto', 250, 15000);
+            }
+            enterrarCabeca(){
+              console.log('Enterrar a cabeça');
+            }
+            voar(){
+              console.log('Não sabe voar');
+            }
+          }
+          let papagaio = new Papagaio(true, 'Vermelho', 24, 253);
+          papagaio.voar();
+
+          let avestruz = new Avestruz();
+          avestruz.enterrarCabeca();
+          avestruz.voar();
+          </script>
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

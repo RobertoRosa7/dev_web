@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+    <style>
+
+    </style>
+
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">BOM - Timing</h4>
+
+      <div class="row">
+
+        <div class="col-10">
+          <h3>BOM (Browser Object Model) Timing</h3>
+          <h5>
+            Esses métodos permite a execução de uma ação de formar programada, no <i>setTimeout()</i> permite a ação
+            uma vez, já <i>setInterval()</i> permite a ação continua com intervalos programados.
+          </h5>
+          <p class="mb-0">
+            "setTimout(açao, tempo de ação em milissegundos);"
+          </p>
+          <span>"clearTimeout();"</span>
+          <p class="mb-0">
+            "setInterval(acao, tempo de acao em milissegundos);"
+          </p>
+          <span>"clearInterval()"</span>
+          <h5>
+            O método clearTimeout() e clearInterval() precisam de referência, portanto, devemos colocar os métodos
+            encapsulado em variáveis.
+          </h5>
+          
+          <!-- JavaScript (Opcional) -->
+          <script>
+            /*
+            * setTimeout(function(){ document.write('Teste') }, 2000);
+            * setInterval(function(){ document.write('Teste' + '<br>') }, 2000);
+            * 
+            * O método clearTimeout e clearInterval() precisam de referência, portanto, devemos colocar os métodos
+            * encapsulado em variáveis.
+            *
+
+            var i = 5;
+            setInterval(function(){
+              document.write(i + '<br>');
+              i--;
+              if(i === 0){
+                window.location.reload();
+              }
+            }, 2000);
+            *
+
+            // Usando clearInterval
+            var i = 5;
+            var x = setInterval(function(){
+              document.write(i);
+              i--;
+              if(i === 0){
+                //clearInterval(x);
+                //window.location.reload();
+              }
+            }, 1000);
+            */
+          </script>
+          
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

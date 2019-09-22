@@ -1,0 +1,173 @@
+/**
+* Geral
+*/
+
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding:0;
+	color:#222;
+	font-size:16px;
+	font-weight: 400;
+	font-family: Circular, Helvetica,Ariel,sans-serif;
+}
+header{
+	text-align: center;
+	padding:25px;
+	border-bottom:1px solid #d9dacd;
+	margin-bottom: 27px;
+	/*margin-right: 5px;*/
+}
+a{
+	text-decoration: none;
+}
+strong{
+	font-weight: 700;
+}
+/**
+* Layouts
+*/
+#form-cadastro .content{
+	margin: 0 auto;
+}
+#form-cadastro .botao{
+	text-align:center;
+}
+#form-cadastro .botao a{
+	background-color: #3b5998;
+	border-radius: 500px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color:#fff;
+	font-size:13.5px;
+	width:100%;
+	font-weight: 700;
+	padding:16px 0;
+	line-height: 13.5px;
+}
+#form-cadastro .botao a:hover{
+	color:white;
+	text-decoration: none;
+	background-color: #3a61b3;
+}
+#form-cadastro .input-group label{
+	font-size:11px;
+	margin-left: 5px;
+	color:#88889c;
+	text-align: left;
+	font-weight: 400;
+}
+#form-cadastro .input-group label a{
+	color:#1db954;
+	text-decoration: none;
+
+}
+#form-cadastro .input-group label a:hover{
+	color: #13d760;
+}
+#form-cadastro .input-group input[type="checkbox"]{
+	margin-left: -20px;
+}
+#form-cadastro .divider span{
+	font-size: 9px;
+	font-weight: 650;
+	padding:0px 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: #fff;
+}
+
+#form-cadastro fieldset{
+}
+#form-cadastro fieldset legend{
+	text-align:center;
+	font-weight:900;
+	font-size:16px;
+	color:#1c1c1f;
+	line-height: 1.2;
+	padding-top:10px;
+}
+#form-cadastro .formulario input{
+	font-size:14px;
+	height:50px;
+	border:1px solid #dfe0e6;
+	margin:10px 0 20px 0;
+}
+#form-cadastro .form-control:focus{
+	box-shadow: none;
+}
+#form-cadastro .date{
+	display:flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	flex-wrap: nowrap;
+}
+#form-cadastro .date input[type="text"]{
+	width:20%;
+	height: 48px;
+}
+#form-cadastro fieldset label{
+	font-size:14px;
+	margin: 0;
+	color:#88898c;
+	padding: 0 35px;
+}
+#form-cadastro #mes{
+	height:48px;
+	width:45%;
+}
+#form-cadastro fieldset .checkbox label{
+	padding:0;
+	margin-right: 25px;
+}
+#form-cadastro fieldset .termos{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+#form-cadastro fieldset .termos label{
+	font-size:10px;
+	text-align: left;
+}
+#form-cadastro fieldset .termos label a{
+	color:#1db954;
+}
+#form-cadastro fieldset .termos label input{
+	margin-left: -20px;
+}
+#form-cadastro fieldset .entre{
+	text-align:center;
+	font-size:14px;
+}
+#form-cadastro fieldset .entre p a{
+	color:#1db954;
+}
+/*
+* Classes
+*/
+.divider{
+	display: block;
+	line-height: 1px;
+	border-top: 1px solid #d9dadc;
+	text-align: center;
+	margin-top:10px;
+	margin-bottom: 5px;
+}
+.formulario, 
+.date,
+.checkbox{
+	padding: 0 35px;
+}
+.btn-submit{
+	width:100%;
+	border-radius:500px;
+	margin: 20px 0;
+	background: #1db954;
+	color:white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 13px;
+	padding:12px 0;
+	font-weight: 900;
+}

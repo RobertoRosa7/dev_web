@@ -1,0 +1,41 @@
+// style sidebar navigation menu
+.fixed-sidenav{
+    height:100%; // full-height, remove this if want auto sidebar
+    width:200px; // set the width of the sidebar
+    position:fixed; // stay in place on scroll
+    z-index:1; // stay on top
+    top:0; // stay at the top
+    left:0; // stay at the left
+    background-color: #111;
+    overflow-x: hidden; // disabled scroll horizontal
+    padding-top:20px;
+}
+// navigation menu link
+.fixed-sidenav a{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size:25px;
+    color:#818181;
+    display:block;
+    text-align:left;
+    &:hover{
+        background-color:#f1f1f1;
+    }
+}
+// style page content
+.fsb-main{
+    margin-left: 200px; // the same width of sidebar
+    padding:0 16px;
+}
+@media screen and (max-width:574px){
+    .fixed-sidenav{
+        padding-top:15px;
+        width:100px;
+    }
+    .fixed-sidenav a{
+        font-size:18px;
+    }
+    .fsb-main{
+        margin-left: 100px;
+    }
+}

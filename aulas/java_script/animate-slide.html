@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Avinash</title>
+
+<style>
+  #slider {
+    margin:0px auto;
+    padding:0px;
+    width:400px;
+    border:1px solid #000;
+    background:#3f3f3f;   
+    height:20px;
+    opacity:0;
+    overflow:hidden;
+  }
+</style>
+<script>
+  
+var minheight = 20;
+var maxheight = 300;
+var opacity = 1;
+var time = 300;
+var timer = null;
+var toggled = false;
+
+window.onload = function() {
+  var controler = document.getElementById('slide');
+  var slider = document.getElementById('slider');
+  slider.style.height = minheight + 'px';
+  
+  controler.onclick = function() {  
+    clearInterval(timer);
+    var instanceheight = parseInt(slider.style.height);
+    var instanceopacity = slider.style.opacity;
+    var init = (new Date()).getTime();
+    var height = (toggled = !toggled) ? maxheight: minheight;
+    var disp = height - parseInt(slider.style.height);
+    timer = setInterval(function() {
+      var instance = (new Date()).getTime() - init;
+      if(instance < time ) {
+        var con = instance / time;
+        var pos = Math.floor(disp * con);
+        result = instanceheight + pos;
+        slider.style.height =  result + 'px';
+        if(toggled) {
+          slider.style.opacity = opacity * con; //opacity
+        }
+        document.getElementById('log').innerHTML = 'Current Height : <b>' + result + '</b><br /> Current Time : <b>' + instance + '</b>';
+      }else {
+        slider.style.height = height + 'px'; //safety side ^^
+        slider.style.opacity = opacity;
+        clearInterval(timer);
+        controler.value = toggled ? ' Slide Up ' :' Slide Down ';
+        document.getElementById('log').innerHTML = 'Current Height : <b>' + height + '</b><br /> Current Time : <b>' + time + '</b>';
+      }
+    },1);
+  };
+};
+</script>
+</head>
+<body>
+<h1> Toggle Slide </h1>
+  <input type="button" id="slide" value =" Slide Down "/>
+  <span id="log" style="position:absolute; left:10px; top:150px;"></span>
+  <br />
+  <div id="slider">
+     content goes here
+  </div>
+</body>
+</html>

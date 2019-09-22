@@ -1,0 +1,54 @@
+/*
+* Game Mata Mosquito
+*/ 
+html{
+	cursor:url(imagens/mata-mosquito-mata_mosca.png)30 30, auto;
+}
+body{
+	background-image:url(imagens/mata-mosquito-bg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	background-attachment:fixed;
+}
+.game-over img, .vitoria img{
+	background-size: cover;
+	background-position: center center;
+	background-attachment:fixed;
+}
+.mosquito1{
+	width:45px;
+	height:45px;
+}
+.mosquito2{
+	width:75px;
+	height:75px;
+}
+.mosquito3{
+	width:90px;
+	height:90px;
+}
+.ladoA{
+	transform: scaleX(1);
+}
+.ladoB{
+	transform: scaleX(-1); /* altera o lado da imagem */
+}
+.painel{
+	position:absolute;
+	width:210px;
+	padding:10px;
+	left:0;
+	bottom:0;
+	border-top:1px solid #fff;
+	background-color:#fff;
+	opacity: 0.7;
+}
+.vidas{
+	float:left;
+}
+.cronometro{
+	float:left;
+	font-size:20px;
+	font-weight: bold;
+}

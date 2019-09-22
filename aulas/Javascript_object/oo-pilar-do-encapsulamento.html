@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    /*
+    * Se houve private this.relacaoCanais - não seria possível fazer a chamada desse atributo quando fosse fazer
+    * a sua instanciação. Seria necessário usar um função para poder buscar esse valor devido ao seu encapsulamento
+    * 
+    * Getters e Setters
+    * São responsáveis por pegar e configurar os valores que foram encapsulados, no caso do javascript não há ainda
+    * esses tipos de encapsulamento, private, public e protected, como convenção deve-se usar um underline antes da
+    * declaração do atributo, indicando assim que este atributo deve ser visto como encapsulado.
+    *
+    * Para usar get e set não é necessário usar parênteses, deve ser como variável,
+    */
+      class Tv{
+        constructor(){
+          this._relacaoCanais = new Array(2, 4, 5, 7, 13, 21);
+          this._canalAtivo = 5;
+          this._volume = 5;
+        }
+
+        get canalAtivo(){
+          return this._canalAtivo;
+        }
+        set canalAtivo(canal){
+          if(this._relacaoCanais.indexOf(canal) !== -1){ //indexOf() traz os índices do array
+           this._canalAtivo = canal;
+          }else{
+            console.log('Este canal não existe');
+          }
+        }
+      }
+      let tv = new Tv();
+      tv.canalAtivo = 7;
+      console.log(tv.canalAtivo);
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Pilar do encapsulamento</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3><u>Encapsulamento</u></h3>
+          <p class="text-justify">
+            O conceito é proteção dos valores contido nas variáveis (atributos), assim até mesmo funções do não
+            podem acessar esses valores, além do usuário.
+          </p>
+        </div>
+        <div class="col-md-12">
+         
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

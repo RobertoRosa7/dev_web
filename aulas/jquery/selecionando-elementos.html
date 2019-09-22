@@ -1,0 +1,64 @@
+<div class="text-justify">
+	<h3>Selecionando elementos parte 2</h3>
+	<h4>Selecionado elementos por classe de tag específica</h4>
+	<p>
+		Para fazer uma selecionar um elemento pela classe, isto é, todos os elementos que possuem a mesma classe
+		deve suar $('.class')
+	</p>
+	<p>
+		Agora selecionar um elemento específico que esteja usando a mesma classe que foi selecionada deve cololar o
+		nome da tag antes do ponto da classe - $('div.class') | $('li.class') | $('input.class')
+	</p>
+	<h4>Selecionando elemento por classe de classe específica</h4>
+	<p>
+		Adicionar uma outra classe na div superior para poder diferenciá-la e, assim poder selecionar todos os elementos
+		que são filhos da classe diferenciadora e que estão usando a mesma classe - $('.lista .exemplo2')
+	</p>
+	<h4>Atuação sobre array de retorno</h4>
+	<p>
+		A primeira coisa que deve ter em mente que sempre quando usamos a seleção do JQuery o retorno da seleção é
+		um Array - atráves da intrução :even |:odd | :first | :last - podemos fazer seleção dentro do array
+	</p>
+	<ul>
+		<li>(:even) selecionar dentro do array os índices pares - $('.lista2 .exemplo2:even)</li>
+		<li>(:odd) selecioanr dentro do array os índices impares - $('.lista2 .exemplo2:odd)</li>
+		<li>(:first) selecionar o primeiro elemento dentro do array - $('.lista2 .exemplo2:first)</li>
+		<li>(:last) selecionar o último elemento dentro do array - $('.lista2 .exemplo2:last)</li>
+	</ul>
+</div>
+        <input  class="exemplo1" type="text" placeholder="input 1">
+        <input type="text" placeholder="input 2">
+        <input type="text" placeholder="input 3">
+        <br>
+        <div class="exemplo1">div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <br>
+        <ul>
+          <li class="exemplo1">opção 1</li>
+          <li class="exemplo2">opção 2</li>
+          <li>opção 3</li>
+        </ul>
+        <ul class="lista2">
+          <li class="exemplo2">opção 1</li>
+          <li class="exemplo2">opção 2</li>
+          <li class="exemplo2">opção 3</li>
+          <li class="exemplo2">opção 4</li>
+          <li>opção 3</li>
+        </ul>
+        <script>
+          // combinação de seletores
+
+            // selecionar elementos por classe de tag específica
+            //console.log($('.exemplo1'))
+
+            // selecionar elementos por classe de classe específica
+            //console.log($('.lista2 .exemplo2'))
+
+          // Atuação sobre Array de retorno dos elementos selecionados
+          console.log($('.lista2 .exemplo2'))
+          console.log($('.lista2 .exemplo2:first'))
+          console.log($('.lista2 .exemplo2:odd'))
+          console.log($('.lista2 .exemplo2:even'))
+          console.log($('.lista2 .exemplo2:last'))
+        </script>

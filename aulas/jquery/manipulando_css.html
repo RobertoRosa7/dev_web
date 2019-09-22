@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<style>
+			.campo{
+				background-color: #ddd;
+				border:none;
+				padding:10px;
+			}
+			.erro{
+				background: red;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				// método tradicional
+				//$('#topo').css('background-color', '#156615').css('padding','10px').css('color', 'white')
+
+				// método objeto literal
+				$('#topo').css({
+					'background-color': '#155661',
+					'padding':'10px',
+					'color':'white',
+					'margin': '0px'
+				})
+				$('h1').css({
+					'color':'#aaa',
+					'font-size':'20px',
+					'text-align':'center',
+					'margin':'0px'
+				})
+
+				$('input').addClass('campo erro')
+				$('textarea').addClass('campo')
+			})
+			/*
+			* css('propriedade css', 'valor')
+			* na formatação em linha é preciso passar dois parâmetro, o primeiro receberá as propriedades css e no
+			* segundo receberá o valor para a propriedade
+			*/
+
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Barra de navegação da aplicação</h1>
+		</div>
+
+		<div>
+			<h3>Contato</h3>
+			<hr />
+
+			<p>Nome:</p>
+			<input type="text" />
+			<br />
+
+			<p>Email:</p>
+			<input type="text" />
+			<br />
+
+			<p>Mensagem:</p>
+			<textarea></textarea>
+			<br />
+
+			<button type="button">Enviar</button>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Array filter</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3></h3>
+          <p class="text-justify">
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="text-justify">
+        </p>
+        </div>
+      </div>
+    </div><!-- /container -->
+
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    	/* Array filter
+    	* É necessário usar o filter como função na variável com uma função de callback, na função de callback
+    	* é preciso passar parâmetros, porque irá percorrer todos os índices do array.
+    	*
+    	* o filter retorna true - irá trazer todos os valores contido no array
+    	* o filter retorna false - irá trazer o array fazio
+    	*
+    	* Assim podemos usar o parâmetro da função de callback como atributo e acessar os valores individuais
+    	* Para o uso do filter que realiza um comparação de true ou false como retorno, devemos usar condicioanis
+    	* para verificar o seu retorno, assim de caso queremos saber se no array existe algum valor basta fazer
+    	* a comparação usando o filter se o retorno for verdadeiro então existe caso contrário não existe.
+    	*/
+    	let funcionarios = [
+    	{nome:'Fernanda', cargo:'RH', salario:3100, status:'ativo'},
+    	{nome:'Roberto', cargo: 'Vendas', salario:2100, staus:'inativo'},
+    	{nome:'João', cargo:'TI', salario:4240, status:'ativo'},
+    	{nome:'Rosa', cargo:'Assistente comercial', salario:1800, status:'ativo'},
+    	{nome:'Beatriz', cargo:'Engenheira Mecânica', salario:6400, status:'inativo'}];
+
+    	/*
+    	funcionarios.filter(function(f){
+    		return f.salario > 2000;
+    	}).filter(function(f){
+    		return f.status == 'ativo';
+    	})
+    	console.log(funcionarios);
+		*/
+
+    	//Arrow Function
+    	functionarios.filter(f => f.salario > 2000).filter(f => f.status == 'ativo');
+    
+    </script>
+  </body>
+</html>

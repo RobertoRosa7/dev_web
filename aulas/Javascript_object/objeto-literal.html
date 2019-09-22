@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Objeto literal</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Objetos Literais</h3>
+          <p class="text-justify">
+            Objetos literias são criados porque nem sempre será necessário criar um classe para poder usá-lo, assim
+            podemos criar objetos de forma literal.<br>
+            Para o uso do dia a dia, é conveniente usar objetos literais devido a sua simplicidade e códigos pequenos
+            Normlamente são único dentro do projeto, não necessidade de criar um coleção desse tipo de objeto, até porque
+            se é necessário deve usar classes.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3></h3>
+          <p class="text-justify">
+          </p>
+          <!-- Your custom script here -->
+          <script type="text/babel">
+          /*
+          * Casse
+          */
+          class Produto{
+            constructor(descricao, preco){
+              this.descricao = descricao;
+              this.preco = preco;
+            }
+            verDescricao(){
+              console.log(`${this.descricao} por apenas ${this.preco}`);
+            }
+          }
+          let produto = new Produto('Notebook', 2200);
+          produto.verDescricao();
+
+          /*
+          * Objeto Literal
+          * usa-se o this aqui porque a referência deve vir o objeto da classe, porque se não for passado então será
+          * preciso usar parâmetros nas funções.
+          */
+          let produtoLiteral = {
+            descricao: 'Geladeira',
+            preco: 2200,
+            verDescricao(){
+              console.log(`${this.descricao} por apenas ${this.preco}`);
+            }
+          }
+          produtoLiteral.verDescricao();
+          </script>
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

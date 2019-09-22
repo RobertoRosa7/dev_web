@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <h4 class="display-4 bg-warning text-center">Calculando Massa Corpórea</h4>
+         
+           <!-- JavaScript (Opcional) -->
+          <script>
+            //coletando dados
+            var nome = prompt('Digite seu nome');
+            var altura = prompt('Digite sua altura'); //devem ser inserido sem ponto
+            var peso = prompt('Digite seu peso');
+
+            //convertendo dados
+            var altura = parseFloat(altura);
+            var peso = parseFloat(peso);
+            var altura = altura / 100;
+            var massa = peso / (altura * altura)
+            var indice = massa;
+            var classificacao = null;
+
+            // Descrevendo as hipoteses
+            if(massa < 16){
+                classificacao = 'Baixo peso: muito grave!';
+            }else if(massa >= 16 && massa < 16.99){
+                classificacao = 'Baixo peso: grave!';
+            }else if(massa >= 17 && massa < 18.49){
+                classificacao = 'Baixo peso:';
+            }else if(massa >= 18.50 && massa < 24.99){
+                classificacao = 'Peso normal:';
+            }else if(massa >= 25 && massa < 29.99){
+                classificacao = 'Sobrepeso:';
+            }else if(massa >= 30 && massa < 34.99){
+                classificacao = 'Obesidade grau I';
+            }else if(massa >= 35 && massa < 39.99){
+                classificacao = 'Obesidade grau II';
+            }else if(massa >= 40){
+                classificacao = 'Obesidade grau III';
+            }
+            document.write(nome + ' possui índice de massa igual a '+indice+' sendo classificado como: '+ classificacao);
+
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

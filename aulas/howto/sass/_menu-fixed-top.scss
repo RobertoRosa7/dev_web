@@ -1,0 +1,31 @@
+// menu fixed top - the navigation bar
+.menu-ft{
+    overflow: hidden;
+    background-color:#333;
+    position:fixed; // set menu fixed on position
+    top:0; // position the navigation on top
+    width:100%; // full screen
+}
+// link inside menu
+.menu-ft a {
+    float:left;
+    display:block;
+    color:#f2f2f2;
+    text-align: center;
+    padding:14px 16px;
+    font-size:17px;
+    text-decoration: none;
+    &:hover{
+        color:black;
+        background:#ddd
+    }
+}
+// link active
+.menu-ft a.active:hover{
+    background:green;
+    color:white;
+}
+// content of page
+.menu-ft-content{
+    margin-top: 80px; // add margin to avoid content overlay
+}

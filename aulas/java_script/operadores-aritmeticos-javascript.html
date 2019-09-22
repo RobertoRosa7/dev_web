@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/
+    GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <h4 class="display-4 bg-warning text-center">Operadores Aritmeticos</h4>
+         
+           <!-- JavaScript (Opcional) -->
+          <script>
+            /*
+            * Os parênteses precede as operações - assim alterando a ordem de processos de lógica das
+            * operações aritmeticas.
+            *
+            * Obs:
+            * Todos os dados que vierem externamente, isto é, pelo browser ou pelo usuário são tratados como strings, com isso o sinal
+            * ou operador de + será tratado de forma diferente sendo string ou number, portanto, para determinados casos será necessário
+            * fazer a conversão para numbers.
+            
+            // var num1 = prompt('Digite um número:');
+            // var num2 = prompt('Digite outro número:');
+
+            var num1 = parseInt(num1);
+            var num2 = parseInt(num2);
+
+            // Operador de soma
+            document.write('A soma entre '+ num1 +' e '+ num2 +' é: ' + (num1 + num2) + '<br>');
+            document.write('A subtração entre '+ num1 +' e '+ num2 +' é: ' + (num1 - num2) + '<br>');
+            document.write('A multiplicação entre '+ num1 +' e '+ num2 +' é: ' + (num1 * num2) + '<br>');
+            document.write('A divisão entre '+ num1 +' e '+ num2 +' é: ' + (num1 / num2) + '<br>');
+            document.write('A modulo entre '+ num1 +' e '+ num2 +' é: ' + (num1 % num2) + '<br>');
+            document.write('O incremento pre de ' + num1 + ' é: ' + (++num1) + '<br>');
+            document.write(num1 + '<br>');
+            document.write('O decremento pre de ' + num1 + ' é: ' + (--num1) + '<br>');
+            document.write('O decremento pós de ' + num1 + ' é: ' + (num1--) + '<br>');
+            document.write(num1 + '<br>');
+            */
+
+            //Operador de atribuição aritmetica
+            // var dez = 10;
+
+            // var dez += 5;
+            // var dez -= 5;
+            // var dez *= 5;
+            // var dez /= 5;
+            // var dez %= 5;
+            // document.write(dez);
+
+            //Precedência de operadores aritmeticos
+
+            // 1º multiplicação e divisão
+            // 2º adição e subtração            
+            document.write(11 + 5 - 5 * 2 / 2 + '<br>'); // resultado: 11
+
+            // (),[] e {} pode causar precedência na ordem da operação artmetica
+
+            // 1º {}
+            // 2º[]
+            // 3º ()
+            // 4º multiplicação e divisão
+            // 5º adição e subtração
+
+            document.write(11 + 5 - (5 * 2) / 2 + '<br>'); // resultado: 11
+            document.write([11 + 5] - (5 * 2) / 2 + '<br>'); // resultado: 11
+            document.write((11 + 5 - 5) * 2 / 2 + '<br>'); // resultado: 11
+
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

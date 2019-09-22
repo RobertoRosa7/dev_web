@@ -1,0 +1,104 @@
+/* Comando usando Css*/
+/*
+* Diretivas de controle para laço de repetição
+* @for $i from 1 through 3 | se for (to) no lugar de through não será incluído o item3
+* @each $cor in $listaCor
+* @while(condicao){}
+* @function nome_da_função - (método)
+* mix() = misturar as cores, cor1,cor2 20% - (métodos)
+* darken(cor1,10%) = deixar as cores mais escuras - (métodos)
+* @mixin nome_do_mixin = reutilização de código - (mixin)
+* @mixin nome($cor1) = reutilizando código com parâmetro - (mixin)
+* @import '' importar outras scripts - (importação)
+* @extend class = herança, indica que está classe herdará as propriedades - (herança)
+* % indica que a classe não será mostrada mas suas propriedades passaram para herança (diretiva placeholder)
+* @if(){} (diretiva de controle)
+* @else if()
+*/
+
+$bg:silver;
+$titulo: DodgerBlue;
+$listaCor: red, blue, orange;
+$total: 12;
+			
+@function largura($coluna){
+
+	@return percentage($coluna/$total);
+}
+$resultado: largura(2);
+/* 1 col = 8.33%
+* #{$resultado}
+*/
+@for $col from 1 through $total{
+	.col-#{$col}{
+		width: largura($col);
+	}
+}
+#body-index{
+	
+	background-color: $bg;
+
+	.container{
+		
+		background: white;
+		width: largura(10);
+		margin: 0 auto;
+		padding: 20px;
+
+		h1 {
+			color: $titulo;
+			text-align: center;
+		}
+		.linha{
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			@for $i from 1 through 3 {
+
+				.item#{$i}{
+
+					width: largura(3);;
+					border:1px solid blue;
+					padding:20px 0;
+				}
+			}
+		}
+		.linha2{
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+			$contador: 1;
+			
+			@while $contador < 5 {
+				
+				.item#{$contador}{
+
+					width: largura(3);
+					border:1px solid red;
+					padding:20px 0;
+				}
+
+				$contador: $contador + 1;
+			}
+			$i: 1;
+			@each $cor in $listaCor {
+				
+				.item#{$i}{
+
+					background-color:mix(white,purple,60%);
+				}
+				$i: $i + 1;
+			}
+		}
+		.linha3{
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+}

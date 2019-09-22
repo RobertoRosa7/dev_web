@@ -1,0 +1,36 @@
+.icon-bar{
+    width: 90px; // set  a specific width
+    background-color: #555; // dark gray background
+}
+.icon-bar a{
+    display:block; // make the link appear below each other instead side-by-side
+    text-align:center; // text center
+    padding:16px; // some space internal from element
+    transition: all 0.3s ease; // add transition for hover
+    color: white;
+    font-size: 36px; // increased font-size
+    &:hover{
+        background-color: #000; // add color to hover
+    }
+}
+.active{
+
+    background-color: #4CAF50; /* Add an active/current color */
+}
+.icon-bar-row{
+    width:100%; // full
+    background-color: #555; // dark gray
+    overflow:auto; // overflow due to float
+}
+.icon-bar-row a{
+    float:left; // side by side links
+    text-align: center;
+    width:20%; // equal 5 icon width 20% each = 100%
+    padding:12px 0; // padding top and bottom
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+    &:hover{
+        background-color: #000; // add color to hover
+    }
+}

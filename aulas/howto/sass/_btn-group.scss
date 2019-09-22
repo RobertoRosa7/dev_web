@@ -1,0 +1,29 @@
+.btn-group{
+    width:100%; // full screen
+}
+// button grup
+.btn-group button{
+    //float:left; // horizontal align
+    padding:10px 16px;
+    background:#4caf50;
+    border:1px solid green;
+    width:33.33%; // button fill
+    display:block; // vertical align
+    cursor:pointer;
+    &:hover{
+        background-color: #3e8e41;
+    }
+}
+// remove border the last child
+.btn-group button:not(:last-child){
+    border-right:none;
+}
+// clear float (clearfix hack)
+.btn-group:after{
+    content:'';
+    clear:both;
+    display:table;
+}
+.btn-group button.active{
+    background-color: #17df1e;
+}

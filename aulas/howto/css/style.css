@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif; }
+
+.custom-select select {
+  display: none; }
+
+.select-selected {
+  background: dodgerblue; }
+
+.select-selected:after {
+  position: absolute;
+  content: '';
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent; }
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px; }
+
+.select-items div, .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer; }
+
+.select-items {
+  position: absolute;
+  background-color: dodgerblue;
+  top: 7%;
+  left: 8px;
+  right: 0;
+  z-index: 99;
+  width: 200px; }
+
+.select-hide {
+  display: none; }
+
+.select-selected div:hover, .same-as-selected {
+  background: rgba(0, 0, 0, 0.1); }
+
+/*# sourceMappingURL=style.css.map */

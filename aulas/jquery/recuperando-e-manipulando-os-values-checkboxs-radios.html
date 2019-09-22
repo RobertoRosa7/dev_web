@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>JQuery</title>
+		<link rel="icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() =>{
+				
+			})
+			/*
+			* Para selecionar os input que estão checados deve usar um token de seleção
+			* $('.sexo:checked') -> assim será selecionado somente os inputs 
+			* com o uso do val() podemos recuperar os valores selecionados
+			* $('.sexo:checked').val()
+			*
+			* radio - permite selecionar apenas um opção
+			* checkbox - permite selecionar uma ou mais opções
+			*
+			* neste caso o checkbox retorna apenas o primeiro valor usando val() de todos os elementos selecionados
+			* para solucionar esse problema devemos usar $.each()
+			*
+			* O $.each(array, callback())
+			* espera dois parâmetro um array e um função de callback
+			* no array devemos color a instrução de seleção dos inputs $('.interesse:checked')
+			* no callback(indices, valores) - precisa de dois parâmetros os índices e seus valores
+			*
+			* $.each($('.interesse:checked'),(indices, valores) => {})
+			*/
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<p>nome:</p>
+			<input type="text" id="nome">
+			<br>
+			<p>onde vc nos encontrou?</p>
+			<select name="" id="origem">
+				<option value="1">Google</option>
+				<option value="2">Facebook</option>
+				<option value="3">Rádio</option>
+				<option value="4">Twitter</option>
+			</select>
+			<p>sexo:</p>
+			<input type="radio" name="sexo" class="sexo" value="f">Feminino<br>
+			<input type="radio" name="sexo" class="sexo" value="m">Masculino<br>
+			<br>
+			<p>interesse:</p>
+			<input type="checkbox" name="interesse" class="interesse" value="php">PHP<br>
+			<input type="checkbox" name="interesse" class="interesse" value="js">JS<br>
+			<input type="checkbox" name="interesse" class="interesse" value="angular">Angular<br>
+			<input type="checkbox" name="interesse" class="interesse" value="nodejs">NodeJS<br>
+		</div>
+		
+	</body>
+</html>

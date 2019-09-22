@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+
+    // 3 escopos: Global, Função e Bloco
+    
+    /* var series = 'Game of Throne'; // escopo global
+
+    function x(){
+      var series = 'Friends';
+
+      console.log('Escopo de função: ' + series); //escopo de função
+
+      if(true){
+        console.log('bloco dentro da função: ' + series); //escopo de bloco
+      }
+    }
+    x();
+    if(true){
+      console.log('Global: ' +series); //escopo de bloco
+    }
+    */
+
+    // Usando Let
+    /*if(true){
+      let series = 'Friend';
+      console.log(series);
+    }
+    */
+    //Caso comum de bug sobre escopo
+    var series = 'Friends';
+    {
+      var series = 'The Walking Dead';
+      console.log('dentro do bloco' + series);
+    }
+    console.log('foa do bloco' + series);
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Como usar ECMAScript?</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <p>
+            let ou var, let preservar o escopo da variável
+          </p>
+          <span class="bg-light p-2">Escopo Global</span>
+          <span class="bg-light p-2">Escopo de Função</span>
+          <span class="bg-light p-2">Escopo de Bloco</span>
+          
+          <h4 class="mt-5">Escopo Global</h4>
+          <p>
+            Trata <i>window</i> ou seja, em todo o conteúdo e janela da documento HTML
+          </p>
+          <h4 class="mt-5">Escopo Função</h4>
+          <p>
+            Trata <i>função</i> ou seja, quando abrir e fechar chave referente a uma função, onde será feito toda
+            a lógica da função.
+          </p>
+          <h4 class="mt-5">Escopo Bloco</h4>
+          <p>
+            Trata <i>bloco</i> ou seja, quando abrir e fechar chaves referente a uma instrução ou comando, pode-se
+            dizer que se trata do comando if, switch, for, etc...
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="text-justify">
+            Sabemos que se trata de um escopo quando abrimos e fechamos chaves, assim um escopo de função não pode
+            ir para global, mas um escopo global pode ir para qualquer escopo de função, do mesmo modo, um escopo 
+            de bloco pode ir para global.
+          </p>
+         
+          <h4 class="mt-5">Let</h4>
+          <p>
+            Let, preserva o escopo da variável, não podendo ser acessada por meio da função ou global. Somente
+            o escopo de bloco tem a característica de hoisting, isto é, a elevação do escopo da variável para um
+            nível superior.<br>
+            Assim não teremos problemas de sobreposição de variáveis, preservando os valores contido na variável
+            usando a declaração let.
+          </p>
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

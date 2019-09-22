@@ -1,0 +1,45 @@
+/** Sombras - Descrição e aplicação
+* O primeiro parâmetro indica a sombra horizontal e a segunda vertical, depois a cor, assim podem definir qualquer
+* sombreamento.
+* A teceira propriedade é um blur - uma espécie de borramento.
+* A quarta propriedade é um espalhamento da cor - indica que pode ser esticado.
+*/
+
+/** Geral
+================================================================*/
+body{
+    font-size:1em;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color:#fff;
+    text-align:center;
+}
+p{
+    font-size:1.1em;
+    text-align:justify;
+    text-indent:15px;
+    color:#eee;
+}
+/** Layout
+================================================================*/
+#sombras{
+    background-color:#009670;
+    box-shadow:0px 0px 3px 3px rgba(0,0,0,0.5);
+}
+#sombras h1{
+    text-shadow:9px 5px 3px rgba(0,0,0,0.3);
+}
+/** Classes
+================================================================*/
+.caixa{
+    box-sizing:border-box;
+    margin:10px;
+    padding:10px;
+    width:300px;
+    height:300px;
+    background:rgb(49, 47, 47);
+    float:left;
+}

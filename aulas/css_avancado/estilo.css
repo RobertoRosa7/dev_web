@@ -1,0 +1,99 @@
+/*** Navegação Vertical
+ul{
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+ul a{
+	color:#000;
+	text-decoration:none;
+	text-indent:40px;
+	line-height:40px;
+	width:200px;
+	height:40px;
+	display: block;
+	background:url(imagens/menu.png) no-repeat left bottom;
+}
+ul a:hover{
+	background-position:right bottom;
+	color:#fff;
+}
+#home     .home     a,
+#servicos .servicos a,
+#noticias .noticias a,
+#sobre    .sobre    a,
+#contato  .contato  a{
+	background-position: right bottom;
+	background-color:#f99200;
+	color:#ff;
+}
+*/
+
+/** Navegação Horizontal - Simples**/
+/*
+ul{
+	list-style: none;
+	margin: 0;
+	padding:0;
+	width:720px;
+	background:#159cb0 url(imagens/fundo-horizontal.png) repeat-x;
+	float:left;
+}
+ul li{
+	float:left; /* recomendado usar float invés de inline
+}
+ul a{
+	display:block;
+	padding:0 2em;
+	line-height:2em;
+	text-decoration:none;
+	color:#fff;
+	background:url(imagens/divisor.png) repeat-y left top;
+}
+ul .prime a{
+	background:none;
+}
+ul a:hover{
+	color:#085662;
+	background-color:#44cade;
+}
+#home     .home     a,
+#servicos .servicos a,
+#noticias .noticias a,
+#sobre    .sobre    a,
+#contato  .contato  a{
+	background-color:#44cade;
+	color:#085662;
+}
+*/
+/** Barra Navegação Horizontal - Abas */
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+	width:920px;
+}
+ul li{
+	float:left;
+	background:url(imagens/aba-direita.png) no-repeat top right;
+}
+li a{
+	display:block;
+	padding:0 2em;
+	line-height:3em;
+	text-decoration:none;
+	background:url(imagens/aba-esquerda.png) no-repeat top left;
+	color:#fff;
+}
+li a:hover{
+	color:#894a1f;
+}
+ul #atual{
+	background:url(imagens/aba-direita-atual.png) no-repeat top right;
+}
+ul #atual a{
+	background:url(imagens/aba-esquerda-atual.png) no-repeat top left;
+}

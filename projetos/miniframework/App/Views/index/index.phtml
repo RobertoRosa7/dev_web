@@ -1,0 +1,15 @@
+<div style="background: #ddd;">
+
+	<h1>Está a página Index - onde ficará somente os conteúdos</h1>
+
+	<?php foreach ($this->view->dados as $key => $produto) { ?>
+
+		<h3 class="text-success"><?= $produto['preco']?></h3>
+
+		<p><?= $produto['descricao']?></p>
+
+	<?php } ?>
+	
+	<h1>o que esta sendo impresso aqui no layout 1 é da página de conteúdo</h1>
+
+</div>

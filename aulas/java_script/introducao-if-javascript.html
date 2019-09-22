@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/
+    GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>Introdução ao if JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <h1 class="bg-warning text-center">Introdução ao if</h1>
+      <div class="row">
+        <div class="col-10 offset-1 border">
+          <h3 class="bg-light d-inline-block">if(condicional){code}</h3>
+          <p>A instrução if é um condicional com instruções de código para serem executadas</p>
+
+          <h3 class="bg-light d-inline-block">Operadores de comparação</h3>
+          <p>Também conhecido como operadores relacionais, servem para formar as expressões condicionais do comando if</p>
+          <h3 class="bg-light d-inline-block">Operadores</h3>
+          <div style="margin-left:5%;">
+            <p class="text-primary">(==) igual verifica se os valores comparados são iguais</p>
+            <p class="text-primary">(===) idêntico verifica se os valores comparados são idênticos</p>
+            <p class="text-primary">(!=) diferente verifica se os valores comparados são diferentes</p>
+            <p class="text-primary">(!==) Não idêntico verifica se os valores comparados são diferentes e de tipos diferentes</p>
+            <p class="text-primary">(<) menor que verifica se os valores comparados é menor que </p>
+            <p class="text-primary">(>) maior que verifica se os valores comparados maior que</p>
+            <p class="text-primary">(<=) igual ou menor verifica se os valores comparados igual ou menor que</p>
+            <p class="text-primary">(>=) igual ou maior verifica se os valores comparados igual ou maior que</p>
+          </div>
+
+              <!-- JavaScript (Opcional) -->
+          <script>
+            
+            // if condicional
+            /* if(8 > 14){
+              document.write('<h1 class="text-success text-center bg-light">Entrou no bloco if(verdadeiro)</h1>');
+            }else{
+              document.write('<h1 class="text-danger text-center bg-light">Entrou no block else(falso)</h1>');
+            }
+            */
+
+            // Estabelecer a média de notas dos alunos
+            var nota = 7;
+            var media = 7;
+
+            if(nota >= media){
+              document.write('<h1 class="alert alert-success">Parabéns! você foi aprovado!</h1>');
+            }else{
+              document.write('<h1 class="alert alert-danger">Você não foi aprovado!</h1>');
+
+            }
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>ECMAS ES6</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+
+    <!-- JavaScript compiler - Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+    <!-- Your custom script here -->
+    <script type="text/babel">
+      // Software de Marcenaria
+      
+      // Precedural Paradgma
+      /*
+      let qtd_pernas = 4;
+      let cor = 'azul';
+      let giratoria = false;
+
+      // Array
+      let cadeiras = new Array();
+      cadeiras[0] = new Array();
+      cadeiras[0]['qtd_pernas'] = 4;
+      cadeiras[0]['cor'] = 'azul';
+      cadeiras[0]['giratoria'] = false;
+      
+      cadeiras[1] = new Array();
+      cadeiras[1]['qtd_pernas'] = 1;
+      cadeiras[1]['cor'] = 'vermelha';
+      cadeiras[1]['giratoria'] = true;
+
+      function girarCadeira(indice){
+        if(cadeiras[indice]['giratoria'] === true){
+          console.log('A cadeira girou');
+        }else{
+          console.log('A cadeira não é giratória');
+        }
+      }
+      // função para adicionar cadeiras
+      function adicionarCadeira(qtd_pernas, cor, giratoria){
+        let cadeira = new Array();
+        cadeira['qtd_pernas'] = qtd_pernas;
+        cadeira['cor'] = cor;
+        cadeira['giratoria'] = giratoria;
+
+        cadeiras.push(cadeira);
+      }
+      */
+      /*
+      * Modelo usando Orientação a Objeto:
+      *
+      * O primeiro passo é criar um classe para objeto, e em seguida criar o método constructor para poder ser
+      * instanciado este modele.
+      */ 
+      class Cadeira{
+        constructor(qtd_pernas, cor, giratoria){
+          this.qtd_pernas = qtd_pernas;
+          this.cor = cor;
+          this.giratoria = giratoria;
+        }
+
+        girarCadeira(){
+          if(this.giratoria === true){
+            console.log('A cadeira girou');
+          }else{
+            console.log('A cadeira não é giratória');
+          }
+        }
+      }
+
+      // Array de objetos
+      let cadeiras = new Array();
+      cadeiras.push(new Cadeira(4, 'verde', false));
+      cadeiras.push(new Cadeira(1, 'vermelha', true));
+      //let cadeira = new Cadeira(4, 'verde', false);
+      //let cadeira2 = new Cadeira(1, 'vermelho', true);
+      console.log(cadeiras);
+      //cadeira2.girarCadeira();
+      cadeiras[1].girarCadeira(); 
+
+    </script>
+
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px; background: #eee;">
+    <div class="container bg-white">
+     <h4 class="display-4 text-center text-black-50 m-0 p-0">Pilar da Abstração Reflexão</h4>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <p>
+          </p>
+        </div>
+        <div class="col-md-12">
+
+        </div>
+      </div>
+    </div><!-- /container -->
+  </body>
+</html>

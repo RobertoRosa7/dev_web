@@ -1,0 +1,93 @@
+// buttons style
+.btn{
+    border:none;
+    border-radius:4px;
+    outline: none;
+    padding:14px 28px;
+    margin: 5px 0;
+    text-align:center;
+    display:inline-block;
+    transition: .3s;
+    color:white;
+    cursor:pointer;
+}
+.btn-click:active {
+  background-color: #3e8e41;
+  transform: translateY(2px);
+}
+.btn-hover{
+    width:180px;
+}
+.btn-hover span{
+    cursor:pointer;
+    position:relative;
+    transition: .5s;
+    display:inline-block;
+}
+.btn-hover span:after{
+    content:'\00bb';
+    position:absolute;
+    top:0;
+    opacity:0;
+    right:-20px;
+    transition: .5s;
+}
+.btn-hover:hover span{
+    padding-right:25px;
+}
+.btn-hover:hover span:after{
+    opacity:1;
+    right:0;
+}
+.btn-to-top{
+    display:none; // hidden by default
+    position:fixed;
+    bottom:20px;
+    right:30px;
+    z-index: 99; // make sure it does not overlap
+}
+.dropdown{
+    position:absolute;
+    bottom:0;
+    display:inline-block;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    bottom:100%;
+    min-width:160px;
+    background:#f1f1f1;
+    z-index:1;
+}
+.dropdown-content a{
+    color:black;
+    padding:12px 16px;
+    display:block;
+    text-decoration:none;
+    &:hover{
+        background-color:#ddd;
+    }
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+.success {background-color: #4CAF50;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #2196F3;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} /* Red */
+.danger:hover {background: #da190b;}
+
+.default {background-color: #e7e7e7; color: black;} /* Gray */
+.default:hover {background: #ddd;}
+
+.fire { background-color: #f4511e;}
+.fire:hover{background:#f45110}
+
+.dark {background-color: #444;}
+.dark:hover {background:#000; color:white;}

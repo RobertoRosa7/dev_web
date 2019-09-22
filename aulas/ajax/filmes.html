@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Requisições Assincrônas</title>
+		
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="xmltojson.js"></script>
+		<script>
+		
+		function getFilmes(){
+			let xml = new XMLHttpRequest()
+			xml.open('GET', 'http://localhost/Udemy/ajax/filmes.xml')
+			xml.onreadystatechange = () => {
+				if(xml.readyState == 4 && xml.status == 200){
+					let XMLFilmes = xml.responseText
+					let parser = new DOMParser()
+
+					/* conversão do xml para json - este método espera dois parâmetro o primeiro é a string
+					* a variável que contém o xml, no segundo parâmetro qual é anotação usada para a fazer
+					* composição dessa string, para que o DOM converta em uma árvore de elementos
+					* text/html | text/json | text/xml
+					*/
+					let domFilmes = parser.parseFromString(XMLFilmes, 'text/xml')
+					//console.log(domFilmes)
+					
+					jsonFilmes = xmlToJson(domFilmes)
+					//console.log(jsonFilmes)
+
+					for(let i in jsonFilmes['filmes']['filme']){
+						//verificar cada um dos índice contido em jsofilmes
+						let item = jsonFilmes['filmes']['filme'][i]
+
+						//criando um novo elemento
+						let divRow = document.createElement('div')
+						divRow.className = 'row'
+
+						let divCol = document.createElement('div')
+						divCol.className = 'col'
+
+						// criando os elemento de conteúdo
+						let p1 = document.createElement('p')
+						p1.innerHTML = '<strong>Título:</strong> ' + item['titulo']['#text']
+
+						let p2 = document.createElement('p')
+						p2.innerHTML = '<strong>Resumo:</strong> ' + item['resumo']['#text']
+
+						let genero = ''
+						for(let g in item.genero){
+							if(genero) genero += ', '
+							genero += item.genero[g]['#text']
+						}
+
+						let p3 = document.createElement('p')
+						p3.innerHTML = '<strong>Gênero:</strong> ' + genero
+
+						let elenco = ''
+						for(let e in item.elenco.ator){
+							if(elenco) elenco += ', '
+							elenco += item.elenco.ator[e]['#text']
+						}
+
+						let p4 = document.createElement('p')
+						p4.innerHTML = '<strong>Elenco:</strong> ' + elenco
+
+						let p5 = document.createElement('p')
+						p5.innerHTML = '<strong>Data de Lançamento:</strong> ' + item.dataLancamento['#text'] + ' (' + item.dataLancamento['@attributes']['pais'] + ')'
+
+						let hr = document.createElement('hr')
+
+						// adicionando os elementos 
+						divRow.appendChild(divCol)
+						divCol.appendChild(p1)
+						divCol.appendChild(p2)
+						divCol.appendChild(p3)
+						divCol.appendChild(p4)
+						divCol.appendChild(p5)
+						divCol.appendChild(hr)
+
+						document.getElementById('lista').appendChild(divRow)
+					}
+				}
+				if(xml.readyState == 4 && xml.status == 404){
+					//...
+				}
+			}
+			xml.send()
+		}
+
+		</script>
+	</head>
+
+	<body>
+
+		<header>
+			<nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+				<div class="container">
+					<div class="navbar-brand mb-0 h1">
+						<h3>Catálago de Filmes</h3>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="container" id="lista">
+			<div class="row mb-5">
+				<div class="col"><button class="btn btn-dark"type="button" onclick="getFilmes()">Listar filmes</button></div>
+			</div>
+			
+		</div>
+	</body>
+</html>

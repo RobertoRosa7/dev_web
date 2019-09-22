@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <!-- Iconic -->
+    <link rel="stylesheet" href="iconic/font/css/open-iconic-bootstrap.css">
+
+    <title>Sistema de Grid - Bootstrap4</title>
+    <style>
+        .marcador{
+          background:#fe9d9d;
+          border:1px solid #fe4646;
+        }
+        .marcador-container{
+          background: #5bf946;
+          border:1px solid #26ae26;
+        }
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+
+    <h1 class="display-4 text-black-50">Sistema de Grid - Bootstrap4</h1><hr>
+    <!-- O sistema de grid é para definier blocos de colunas para melhorar alinhamento e definições do site -->
+    <!-- assim poderá colocar container devidamente alinhados -->
+    <!-- Há doze colunas como padrão, porém, pode ter mais no máximo 24 colunas,  -->
+    
+    <!-- col- para telas menor que 576px -->
+    <!-- col-sm para telas maior ou igual a 576px -->
+    <!-- col-md para telas maior ou igual a 768px -->
+    <!-- col-lg para telas maior ou igual 992px -->
+    <!-- col-xl para telas maior ou igual 1200px -->
+
+
+    <!-- col- -->
+    <h3 class="text-black-50">col- (Extra Small) <span class="small">tela menor que 576px</span></h3>
+    <div class="container marcador-container">
+     <!-- row - linha -->
+     <div class="row"><!--funciona como se fosse um flex-container-->
+       <div class="marcador col-6">área 1 col-6</div>
+       <div class="marcador col-6">área 2 col-6</div>
+     </div>
+    </div>
+
+    <!-- col-sm -->
+    <h3 class="text-black-50">col-sm (Small) <span class="small">tela maior ou igual a 576px</span></h3>
+    <div class="container marcador-container">
+      <div class="row">
+        <div class="marcador col-6 col-sm-2">área 1 - col-sm-2</div>
+        <div class="marcador col-6 col-sm-10">área 2 - col-sm-10</div>
+      </div>
+    </div>
+
+    <!-- col-md -->
+    <h3 class="text-black-50">col-md (Medium) <span class="small">tela maior ou igual a 768px</span></h3>
+    <div class="container marcador-container">
+      <div class="row">
+        <div class="marcador col-6 col-sm-2 col-md-10">área 1 col-md-10</div>
+        <div class="marcador col-6 col-sm-10 col-md-2">área 1 col-md-2</div>
+      </div>
+    </div>
+
+    <!-- col-lg-->
+    <h3 class="text-black-50">col-md (Large) <span class="small">tela maior ou igual a 992px</span></h3>
+    <div class="container marcador-container">
+      <div class="row">
+        <div class="marcador col-6 col-sm-2 col-md-10 col-lg-2">área 1 col-lg-2</div>
+        <div class="marcador col-6 col-sm-10 col-md-2 col-lg-10">área 1 col-lg-10</div>
+      </div>
+    </div>
+
+    <!-- col-lg-->
+    <h3 class="text-black-50">col-xl (Extra Large) <span class="small">tela maior ou igual 1200px</span></h3>
+    <div class="container marcador-container">
+      <div class="row">
+        <div class="marcador col-6 col-sm-2 col-md-10 col-lg-2 col-xl-10">área 1 col-xl-10</div>
+        <div class="marcador col-6 col-sm-10 col-md-2 col-lg-10 col-xl-2">área 1 col-xl-2</div>
+      </div>
+    </div><hr>
+
+    <!-- Praticando em conteúdos reais -->
+    <h3 class="text-black-50">Praticando em conteúdos reais com 6 colunas</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 bg-light">
+          <h2>Títudo do conteúdo</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus at modi amet delectus provident voluptatibus molestias quasi tenetur porro, debitis nesciunt blanditiis quia et minus quos suscipit, laudantium illo.</p>
+          <button class="btn btn-warning" type="button"><i class="oi oi-pencil"></i> Leia mais...</button>
+        </div>
+
+        <div class="col-md-6 bg-light">
+          <h2>Títudo do conteúdo</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus at modi amet delectus provident voluptatibus molestias quasi tenetur porro, debitis nesciunt blanditiis quia et minus quos suscipit, laudantium illo.</p>
+          <button class="btn btn-warning" type="button"><i class="oi oi-pencil"></i> Leia mais...</button>
+        </div>
+
+      </div><!--fim row-->
+    </div><!--fim container-->
+
+    <!-- Praticando em conteúdos reais -->
+    <h3 class="text-black-50">Praticando em conteúdos reais com 4 colunas</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 bg-light">
+          <h2>Títudo do conteúdo</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus at modi amet delectus provident voluptatibus molestias quasi tenetur porro, debitis nesciunt blanditiis quia et minus quos suscipit, laudantium illo.</p>
+          <button class="btn btn-warning" type="button"><i class="oi oi-pencil"></i> Leia mais...</button>
+        </div>
+
+        <div class="col-md-4 col-sm-6 bg-light">
+          <h2>Títudo do conteúdo</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus at modi amet delectus provident voluptatibus molestias quasi tenetur porro, debitis nesciunt blanditiis quia et minus quos suscipit, laudantium illo.</p>
+          <button class="btn btn-warning" type="button"><i class="oi oi-pencil"></i> Leia mais...</button>
+        </div>
+
+        <div class="col-md-4 col-sm-12 bg-light">
+          <h2>Títudo do conteúdo</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus at modi amet delectus provident voluptatibus molestias quasi tenetur porro, debitis nesciunt blanditiis quia et minus quos suscipit, laudantium illo.</p>
+          <button class="btn btn-warning" type="button"><i class="oi oi-pencil"></i> Leia mais...</button>
+        </div>
+
+
+      </div><!--fim row-->
+    </div><!--fim container-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

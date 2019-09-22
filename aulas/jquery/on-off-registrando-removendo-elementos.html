@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+		.space {
+		  width: 100%;
+		  padding-right: 15px;
+		  padding-left: 15px;
+		  margin-right: auto;
+		  margin-left: auto;
+		}
+		.desfocado{
+			background-color:white;
+			border:1px solid #000;
+		}
+		.focado {
+			background-color:green;
+			border:1px solid #000;
+		}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			/*
+			* on / off
+			* registra/remove eventos mesmo que eles seja criados posteriormente a chamada da função
+			*/
+			// carregando elementos do DOM
+			$(document).ready(() => {
+				// on('evento', funcao(){})
+				$('div.space').on('focus', 'input', e => {
+					$(e.target).removeClass('desfocado')
+					$(e.target).addClass('focado')
+				})
+				$('div.space').on('blur', 'input', e => {
+					$(e.target).removeClass('focado')
+					$(e.target).addClass('desfocado')
+				})
+				$('div.space').append('<br><br><input type="text" class="desfocado">')
+			})
+			/* um terceiro parâmetro na função on('evento', 'tag', 'função(){}') indica que todos os elementos 
+			* receberam os eventos mesmo aqueles que forem criados depois, de forma programatica, mas para isso 
+			* a seleção deve ser em uma div superior pai
+			*/
+
+		</script>
+	</head>
+
+	<body>
+		<div class="space">
+			<input type="text" class="desfocado" placeholder="digite aqui">
+		</div>
+	</body>
+</html>

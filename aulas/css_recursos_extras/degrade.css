@@ -1,0 +1,49 @@
+/** Estilo CSS em Degradê
+================================================================*/
+/**
+* linear-gradient():    para aplicação linear em background, é necessário duas cores em sua propriedade para serem
+*                       aplicado degradê. Há uma terceira propriedade que indica o direcionamento para início do degradê - que são:
+*                       (to left, to right, to top, to bottom) e também pode ser por orientação diagonal (90deg ou 180deg)
+*
+* linear-radial():   Funciona como linear-gradient, porém, é do centro para as extremidades.
+*/
+/** Geral
+================================================================*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    font-size:1.4em;
+    color:#fff;
+}
+p{
+    color:#eee;
+    text-align:justify;
+    font-size:0.9em;
+}
+#degrade{
+    /* background:linear-gradient(45deg, #fff, #555, pink); */
+    background:radial-gradient(#fff, pink);
+}
+#transparencia{
+    background-image: url(imagens/camera.png);
+    background-size:cover;
+    background-position: center;
+    /* background-color:rgb(92, 92, 86) */
+}
+/** Classes
+================================================================*/
+.caixa{
+    width: 300px;
+    height:300px;
+    padding:10px;
+    margin: 5px;
+    text-align:center;
+    box-sizing:border-box;
+    float:left;
+}
+.caixa h1{
+    background-color:rgba(255,255,255,0.3);
+}

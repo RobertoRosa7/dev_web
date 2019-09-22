@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    
+    <!-- Bootstrap Local -->
+    <link rel="stylesheet" href="../Bootstrap4-DesignResponsive/bootstrap4/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"> -->
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+    <style>
+      .form-control:focus{
+        box-shadow: none;
+      }
+      @-webkit-keyframes notes{
+        from{
+        }
+        to{
+        }
+      }
+      @-moz-keyframes notes{
+        from{
+        }
+        to{
+        }
+      }
+      @-o-keyframes notes{
+        from{
+        }
+        to{
+        }
+      }
+      @keyframes notes{
+        from{
+          position: relative;
+          left:-300px;
+        }
+        to{
+          position: relative;
+          left:0;
+        }
+      }
+      #notificacao .notify{
+        display: none;
+        background:#ccc;
+        width:300px;
+        height:50px;
+        border-radius: 0px 30px 30px 0px;
+        text-align:center;
+        line-height: 50px;
+        margin-top: 5px;
+      }
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container border p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Atividade de fixação</h4>
+
+      <div class="row">
+        <div class="col-10 offset-1">
+
+          <p>
+            1) Crie uma aplicação web contendo um campo para entrada de texto (input text) e dois
+            botões (buttons), sendo um botão com a descrição "Adicionar" e outro com a descrição
+            "Ordenar", conforme imagem abaixo:
+          </p>
+          <p>
+            Após criar os elementos de interação com o usuário acima, crie um Array de nome objetos contendo
+            os seguintes valores:
+          </p>
+          <p>
+            <strong>Os próximos passos são:</strong><br><br>
+            A) Ao clicar no botão "Adicionar" disparar função que irá:
+            <br>
+            •
+            Recuperar o valor contido no campo de texto.
+            Verificar se o valor está vazio ou preenchido.
+            o Se vazio, exibir alert com a mensagem "Informe um valor válido".
+            o Se preenchido:
+            <br>▪ Verificar se o valor informado já existe dentro do Array objetos.
+            <br>▪ Se existir, exibir alert com a mensagem "Objeto já foi adicionado".
+            <br>▪ Se não existir:
+            <br>• Incluir o valor preenchido no campo dentro do Array.
+            <br>• Efetuar um console.log do Array para debug (checar se está
+            funcionado).
+            <br>• Limpar o valor contido no campo de entrada de texto.
+            B) Ao clicar no botão "Ordenar" disparar função que irá:
+            <br>•
+            Ordenar de forma alfabética os valores do Array de objetos.
+            Efetuar um console.log do Array para debug (checar se está funcionado).
+          </p>
+          
+
+          <!-- entrada de texto -->
+          <form action="" class="form-inline">
+            <div class="form-group mb-2">
+              <input style="width:300px;" id="entrada" type="text" class="form-control campo" placeholder="Objetos">
+              <button onclick="adicionar()" type="button" class="btn btn-success ml-2" value="Adicionar">Adicionar</button>
+              <button onclick="excluir()" type="button" class="btn btn-danger ml-2" value="Adicionar">Excluir</button>
+              <button onclick="ordenar()" type="button" class="btn btn-warning ml-2" value="Ordenar">Ordenar</button>
+            </div>
+          </form>
+    
+        </div>
+
+           <!-- JavaScript (Opcional) -->
+          <script>
+            var objetos = new Array();
+
+              function adicionar(){
+                var dados = document.getElementById('entrada').value;
+
+                if(dados === ''){
+                  document.getElementById('vazio').style.display = 'block';
+                  document.getElementById('vazio').style.animationName = 'notes';
+                  document.getElementById('vazio').style.animationDuration = '1s';
+                  document.getElementById('vazio').style.animationDelay = '0s';
+                  document.getElementById('vazio').style.transitionTimingFunction = 'ease-in-out';
+
+                }else{
+                  var search = objetos.indexOf(dados);
+                  if(search === -1){
+                    objetos.push(dados.toLowerCase());
+                    console.log(objetos);
+                    // alert('Objeto foi adicionado com sucesso')
+                    document.getElementById('cheio1').style.display = 'block';
+                    document.getElementById('cheio1').style.animationName = 'notes';
+                    document.getElementById('cheio1').style.animationDuration = '1s';
+                    document.getElementById('cheio1').style.animationDelay = '0s';
+                    document.getElementById('cheio1').style.transitionTimingFunction = 'ease-in-out';
+                    document.getElementById('entrada').value = '';
+
+                  }else{
+                  // alert('O objeto já foi adicionado');
+                  document.getElementById('cheio1-2').style.display = 'block';
+                  document.getElementById('cheio1-2').style.animationName = 'notes';
+                  document.getElementById('cheio1-2').style.animationDuration = '1s';
+                  document.getElementById('cheio1-2').style.animationDelay = '0s';
+                  document.getElementById('cheio1-2').style.transitionTimingFunction = 'ease-in-out';
+                  document.getElementById('entrada').value = '';
+                }
+              }
+            }
+            function ordenar(){
+             var dados = document.getElementById('entrada').value;
+
+              // alert('Objeto foi ordenado com sucesso');
+              if(objetos.length === 0){
+                document.getElementById('vazio4').style.display = 'block';
+                document.getElementById('vazio4').style.animationName = 'notes';
+                document.getElementById('vazio4').style.animationDuration = '1s';
+                document.getElementById('vazio4').style.animationDelay = '0s';
+                document.getElementById('vazio4').style.transitionTimingFunction = 'ease-in-out';
+              }else{
+                console.log(objetos.sort());
+                document.getElementById('cheio3').style.display = 'block';
+                document.getElementById('cheio3').style.animationName = 'notes';
+                document.getElementById('cheio3').style.animationDuration = '1s';
+                document.getElementById('cheio3').style.animationDelay = '0s';
+                document.getElementById('cheio3').style.transitionTimingFunction = 'ease-in-out';
+                document.getElementById('entrada').value = '';
+
+              }
+            }
+            function excluir(){
+              var dados = document.getElementById('entrada').value;
+
+              if(dados == ''){
+                // alert('Informe o objeto para ser excluído');
+                document.getElementById('vazio2').style.display = 'block';
+                document.getElementById('vazio2').style.animationName = 'notes';
+                document.getElementById('vazio2').style.animationDuration = '1s';
+                document.getElementById('vazio2').style.animationDelay = '0s';
+                document.getElementById('vazio2').style.transitionTimingFunction = 'ease-in-out';
+
+              }else{
+                var search = objetos.indexOf(dados.toLowerCase());
+                if(search == -1){
+                  // alert('O objeto não foi adicionado ainda');
+                  document.getElementById('vazio3').style.display = 'block';
+                  document.getElementById('vazio3').style.animationName = 'notes';
+                  document.getElementById('vazio3').style.animationDuration = '1s';
+                  document.getElementById('vazio3').style.animationDelay = '0s';
+                  document.getElementById('vazio3').style.transitionTimingFunction = 'ease-in-out';
+                }else{
+                  objetos.pop(dados.toLowerCase());
+                  
+                  // alert('O objeto foi removído com sucesso');
+                  document.getElementById('cheio2').style.display = 'block';
+                  document.getElementById('cheio2').style.animationName = 'notes';
+                  document.getElementById('cheio2').style.animationDuration = '1s';
+                  document.getElementById('cheio2').style.animationDelay = '0s';
+                  document.getElementById('cheio2').style.transitionTimingFunction = 'ease-in-out';
+                  document.getElementById('entrada').value = '';
+                }
+              }
+            }
+          </script>
+        </div>
+      </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+    <div id="notificacao">
+        <label id="cheio1" class="notify text-white bg-success" for="">Adicionado com sucesso!</label>
+        <label id="cheio1-2" class="notify bg-warning" for="">item já foi adicionado!</label>
+        <label id="cheio2" class="notify text-white bg-primary" for="">item excluído com sucesso!</label>
+        <label id="cheio3" class="notify text-white bg-success" for="">Lista organizado com sucesso!</label>
+
+        <label id="vazio" class="notify  bg-danger" for="">Digite um objeto válido</label>
+        <label id="vazio2" class="notify bg-danger" for="">Digite um objeto para ser excluído</label>
+        <label id="vazio3" class="notify bg-danger" for="">Não foi possível achar seu item</label>
+        <label id="vazio4" class="notify bg-danger" for="">Não há itens na lista</label>
+    </div>
+  </body>
+</html>

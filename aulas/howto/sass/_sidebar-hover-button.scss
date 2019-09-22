@@ -1,0 +1,33 @@
+// style link inside the sidebar
+.sb-btn-hover a{
+    position:absolute; // position relative is window of browser
+    left:-80px; // position them outside of the screen
+    transition: .3s;
+    padding:15px;
+    width:100px; // size fixed - default
+    text-decoration: none;
+    font-size:20px;
+    color:white;
+    border-radius: 0 5px 5px 0;
+    &:hover{
+        left:0; // make the elements appear
+    }
+}
+// style individual elements
+#sb-btn-about{
+    top:20px;
+    background:#4caf50;
+}
+#sb-btn-blog{
+    top:80px;
+    background-color: #2196F3; /* Blue */
+}
+#sb-btn-projects {
+    top: 140px;
+    background-color: #f44336; /* Red */
+  }
+  
+#sb-btn-contact {
+    top: 200px;
+    background-color: #555 /* Light Black */
+  }

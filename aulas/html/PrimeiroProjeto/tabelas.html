@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Tabelas</title>
+</head>
+<body>
+	<h1><center>Tabelas</center></h1>
+
+	<h2>Produtos</h2>
+	<!-- Tabelas -->
+	<table border="2" width="50%">
+		<tr> <!-- linha -->
+			<th>Código</th> <!-- th (table header ou cabeçalho da tabela) -->
+			<th>Produto</th>
+			<th>Preço</th>
+		</tr>
+		<tr>
+			<td>001</td>  <!-- td (table data ou células da tabela) -->
+			<td>Notebook</td>
+			<td>R$ 2.600,00</td>
+		</tr>
+		<tr>
+			<td>002</td>
+			<td>Tablet</td>
+			<td>R$ 1.430,99</td>
+		</tr>
+		<tr>
+			<!-- rolspan para expandir linhas  -->
+			<td rowspan="2">Desconto</td>
+			 <!-- colspan para expandir colunas -->
+			<td colspan="2">Cupom 1 - R$ 10,00</td>
+		</tr>
+		<tr>
+			<td colspan="2">Cupom 2 - R$ 12,00</td>
+		</tr>
+		<tr>
+			<td>Total</td>
+			<td colspan="2">R$ 4.008,99</td>
+		</tr>
+	</table>
+</body>
+</html>

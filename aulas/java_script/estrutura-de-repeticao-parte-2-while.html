@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+    <style>
+
+    </style>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container border p-0">
+     <h4 class="display-4 bg-warning text-center m-0 p-0">Estrutura de Repetição parte II (while)</h4>
+
+      <div class="row">
+
+        <div class="col-10 offset-1">
+          <p>
+            Usando estrutura de repetição para percorrer a estrutura árvore (DOM) do HTML para verificar
+            as ocorrência e analisar todo o documento.
+            <br>
+            Com a estrutura de repetição, podemos criar um bloco de código e modificar somente seu valor
+            e assim ter uma lista do mesmo código, evitando assim, ter que escrever todo o código.
+            <br>
+            Para toda repetição é necessário ter um fim, se não entraria em loop infinito, portanto, para
+            todo laço de repetição é obrigatório ter um ponto final, uma condição que diga a intrução que
+            quando chegar numa determinada condição é para parar.
+            <br>
+            Há outra forma de interromper a intrusão while usando break, assim podemos definir um limite
+            menor ou antes da condição, manipulando por completo o laço de repetição.
+            <br>
+            A instrução continue, finaliza a primeira condição e passa para o proximo passo, no momento
+            que a instrução <i>continue</i> é encontrado ele volta para a condição inicial e verifica o
+            próximo passo. Então neste caso, volta para verificação de <i>x</i> que é menor que dez, portanto,
+            cada entrando num laço infinito ou <i>loop infinito</i>
+          </p>
+
+           <!-- JavaScript (Opcional) -->
+          <script>
+            /* Sintaxe: while(){}
+            * Enquanto a condição for verdadeira o while irá executar o bloco de código
+            */
+
+            var x = 1;
+            /*
+            while(x <= 10){
+              document.write(x + '<br>');
+              if(x === 5){
+                break;
+              }
+              x++;
+            }
+            */
+
+            document.write('Início do white' + '<br>');
+
+            while(x <= 10){
+              x++ // -> necessário vir antes do continue - para não gerar loop infinto
+              if(x === 5){
+                document.write('x chegou no 5 e continuou' + '<br>');
+                continue;
+              }
+              document.write(x + '<br>');
+            }
+            document.write('Fim do while');
+
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

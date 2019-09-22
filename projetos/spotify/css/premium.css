@@ -1,0 +1,252 @@
+/*
+* Formatação apenas do conteúdo da página Premium
+*/ 
+body{
+	background:#60b3fb;
+}
+#prem-conteudo-principal{
+	background:	radial-gradient(rgba(255,255,255,0.13), transparent),
+				url(../imagens/spotify-premium_dancer.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+#prem-conteudo-principal{
+	opacity: 0.9;
+}
+#prem-conteudo-principal .banner h1{
+	font-weight: 900;
+	font-size:96px;
+	letter-spacing: -2px;
+	line-height: 110px;
+	margin:30px 0 0 0;
+}
+#prem-conteudo-principal .banner h3{
+	color:#fff;
+	font-size:36px;
+	font-weight: 700;
+}
+#prem-conteudo-principal .btn-experimente{
+	padding:17px 25px;
+	margin: 30px 0;
+	width:350px;
+	border-radius:500px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size:14px;
+	font-weight: 700;
+}
+#prem-conteudo-principal p{
+	font-size:11px;
+	color:#fff;
+	text-align:center;
+	margin: 50px 0 30px 0;
+	letter-spacing: 1px;
+	opacity: .8;
+}
+#prem-conteudo-principal p a{
+	text-decoration: underline;
+	color:#fff;
+}
+#prem-conteudo{
+	background:#fff;
+}
+#prem-conteudo h2{
+	color:#000;
+	text-align:center;
+	padding:30px 0;
+}
+#prem-conteudo p{
+	color:#575757;
+	font-weight: 400;
+	letter-spacing: -0.25px;
+	font-size:14px;
+	line-height: 24px;
+	font-family:Ariel,sans-serif;
+}
+#prem-oferta{
+	background: #f8f8f8;
+}
+#prem-oferta h1{
+	font-size:2.2em;
+	color:#000;
+	text-align: center;
+	padding:30px 0px;
+	margin: 0;
+}
+#prem-oferta .custom-card,
+#prem-oferta .custom-card .card-header{
+	background: #fff;
+}
+#prem-oferta .custom-card{
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.2);
+}
+#prem-oferta #offer-free:hover,
+#prem-oferta #offer-premium:hover{
+	transform: scale(1.03);
+	transition: .5s;
+	box-shadow: none;
+}	
+#prem-oferta .card-header p{
+	text-align:left;
+	font-size:1.3em;
+	font-family:Ariel,sans-serif;
+	font-weight: 400;
+	padding-top: 10px;
+}
+#prem-oferta .card-header h1{
+	margin: 0;
+	padding: 0 0 10px 0;
+	text-align:left;
+	letter-spacing: 1px;
+	font-size:2.1em;
+	line-height: 12px;
+}
+#prem-oferta .card-header h1 span{
+	font-size:16px;
+	font-weight: none;
+	font-family:Ariel,sans-serif;
+	font-weight: 400;
+}
+#prem-oferta .card-header h1 small{
+	font-family:Ariel,sans-serif;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	color:#666;
+	display: inline;
+	letter-spacing: -0.50px;
+}
+#prem-oferta .card-header h1 #card-free{
+	opacity: 0;
+}
+#prem-oferta .card-header ul{
+	list-style: none;
+	padding:0;
+}
+#prem-oferta .card-header ul li{
+	font-family:Ariel,sans-serif;
+	font-size:14px;
+	padding:5px 0;
+}
+#prem-oferta .card-header ul li img{
+	padding:0px 10px;
+}
+#prem-oferta #p-termos{
+	font-size:11px;
+	text-align:center;
+	letter-spacing: 1px;
+	opacity: .8;
+	padding:20px;
+	color:#aaa;
+	font-weight: 400;
+}
+#prem-oferta #p-termos a{
+	font-size:11px;
+	color:#aaa;
+	text-decoration: underline;
+}
+/*
+* Classes
+*/
+.navbar-light .navbar-nav .nav-link{
+	color:white;
+	margin-left: 15px;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	color:blue;
+}
+.btn-offer{
+	border-radius:500px;
+	text-transform: uppercase;
+	font-size:0.85em;
+	padding:13px 0;
+	letter-spacing: 1.5px;
+	font-weight: 400;
+}
+/*
+* Media Queries
+*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px){
+	#prem-conteudo-principal{
+		opacity: 1;
+	}
+	#prem-conteudo-principal .banner h1{
+		font-size:46px;
+		line-height: 55px;
+		text-align: center;
+		margin: 0;
+	}
+	#prem-conteudo-principal .banner h3{
+		font-size:23px;
+		text-align:center;
+	}
+	#prem-conteudo-principal .btn-experimente{
+		padding:15px 25px;
+		margin: 30px 0;
+		width:250px;
+		border-radius:500px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size:12px;
+		font-weight: 700;
+		align-self: center;
+	}
+	#prem-conteudo h2{
+		font-size:1.6em;
+	}
+	.img-custom{
+		width:45%;
+	}
+
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px){
+	#prem-conteudo-principal{
+		opacity: 1;
+	}
+	#prem-conteudo-principal .banner h1{
+		font-size:76px;
+		line-height: 80px;
+		text-align: center;
+		margin: 0;
+	}
+	#prem-conteudo-principal .banner h3{
+		font-size:23px;
+		text-align:center;
+	}
+	#prem-conteudo-principal .btn-experimente{
+		padding:15px 25px;
+		margin: 30px 0;
+		width:300px;
+		border-radius:500px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size:14px;
+		font-weight: 700;
+		align-self: center;
+	}
+	#prem-conteudo h2{
+		font-size:2.5em;
+	}
+	.img-custom{
+		width:45%;
+	}
+
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px){
+	.img-custom{
+		width:70%;
+	}
+
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px){
+
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px){
+
+}

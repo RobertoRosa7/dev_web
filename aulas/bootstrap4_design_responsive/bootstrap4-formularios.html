@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+
+    <!-- Título da página -->
+    <title>Formulários - Bootstrap4</title>
+  </head>
+  <body style="margin-bottom:200px; padding:16px;">
+
+    <!-- Formulários -->
+    <!-- form-control = formatação padrão de formulários - form-control-sm/lg -->
+    <h1 class="display-4">Formulários</h1><hr>
+    <form action="">
+
+      <!-- Caixa de texto -->
+      <h1 class="text-primary">Caixa de Texto</h1>
+      <div class="form-group"><!--espaçamento e agrupamento-->
+        <label for="usuario">Usuário:</label>
+        <input class="form-control form-control-sm" type="text" name="user" id="usuario" placeholder="digite seu usuário">
+      </div>
+
+      <div class="form-group"><!--espaçamento e agrupamento-->
+        <label for="email">E-mail:</label>
+        <input class="form-control form-control-lg" type="text" name="user" id="email" placeholder="digite seu e-email" readonly>
+        <small class="form-text">Email será validado</small>
+      </div>
+
+      <!-- Select -->
+      <h1 class="text-primary">Select</h1>
+      <div class="form-group">
+        <label for="estados">Estados</label>
+        <select class="form-control" name="" id="estados">
+          <option value="Acre">Acrê</option>
+          <option value="Amapa">Amapá</option>
+          <option value="">...</option>
+        </select>
+      </div>
+
+      <!-- Textarea -->
+      <h1 class="text-primary">Textarea</h1>
+      <div class="form-group">
+        <label for="mensagem">Mensagem:</label>
+        <textarea class="form-control" id="mensagem" name="name" rows="8" cols="80"></textarea>
+      </div>
+
+      <!-- input files -->
+      <h1 class="text-primary">input files</h1>
+      <div class="form-group">
+        <label for="input-file">Arquivo</label>
+        <input class="form-control-file" type="file" id="input-file">
+      </div>
+
+      <!-- Custom input files -->
+      <h1 class="text-primary">Custom input files</h1>
+      <div class="custom-file">
+        <label class="custom-file-label" for="arquivo">selecione arquivo</label>
+        <input class="custom-file-input" type="file" name="" id="arquivo">
+      </div>
+
+      <!-- Range -->
+      <h1 class="text-primary">Range</h1>
+      <div class="form-group">
+        <label for="range">Satisfação</label>
+        <input class="custom-range" type="range" id="range" min="1" max="5">
+      </div>
+
+      <!-- button -->
+      <h1 class="text-primary">Button</h1>
+      <input type="submit" class="btn btn-primary" name="button" id="button" value="Enviar"><br><br>
+
+      <!-- formlulários inline -->
+      <h1 class="text-primary">Formulários inline</h1>
+        <div class="form-inline">
+          <input class="form-control mr-2" type="email" id="user" placeholder="Digite seu email" required>
+          <input class="form-control mr-2" type="password" name="pass" value="" id="pass" placeholder="Digite sua senha" required>
+          <input type="submit" class="btn btn-outline-primary" id="enviar" name="enviar" value="enviar">
+        </div><br>
+
+        <!-- Validação de formulários -->
+        <!-- is-valid | is-invalid | invalid-feedback -->
+        <h1 class="text-primary">Validação de formulários</h1>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input class="form-control is-valid" type="text" id="email" placeholder="digite seu email">
+          <div class="valid-feedback">Email válido</div>
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha:</label>
+          <input type="password" class="form-control is-invalid" id="senha" placeholder="digite sua senha">
+          <div class="invalid-feedback">senha invalida</div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="logar" id="enviar">
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

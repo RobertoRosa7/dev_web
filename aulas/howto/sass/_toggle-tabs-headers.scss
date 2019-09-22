@@ -1,0 +1,39 @@
+// style of buttons
+.toggle-tab-header-link{
+    background-color:#555;
+    color:white;
+    float:left;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:14px 16px;
+    font-size:17px;
+    width:25%;
+    &:hover{
+        background-color:#777;
+    }
+}
+// tab content
+.toggle-tab-header-content{
+    padding:50px;
+    display:none;
+    color:white;
+    text-align:center;
+}
+.red {
+    background-color:red;
+}
+.green {
+    background-color:green;
+}
+.blue{
+    background-color:blue;
+}
+.orange{
+    background-color:orange;
+}
+/* Style each tab content individually */
+#toggle-tab-header-londom {background-color:red;}
+#toggle-tab-header-paris {background-color:green;}
+#toggle-tab-header-tokyo {background-color:blue;}
+#toggle-tab-header-oslo {background-color:orange;}

@@ -1,0 +1,67 @@
+// overlay background - height and width depends on how you want to reveal
+.fsn-overlay{
+    height:0; 
+    width:100%;
+    position:fixed;
+    top:0;
+    right:0; // left or right to show the overlay
+    z-index:1;
+    background-color: rgba(0,0,0,0.89); // black opacity
+    overflow-x:hidden;
+    transition: .8s;
+}
+// position content inside the overlay
+.fsn-overlay-content{
+    position:relative;
+    top:25%;
+    width:100%;
+    text-align:center;
+    margin-top:30px; // to avoid conflict with button
+}
+// links inside the overlay
+.fsn-overlay-content a{
+    padding:8px;
+    text-decoration: none;
+    color:#818181;
+    font-size:36px;
+    display:block;
+    transition: .3s;
+    &:hover, &:focus{
+        color:#f1f1f1;
+    }
+}
+// button to close
+.fsn-overlay .btn-fsn-close{
+    position:absolute;
+    top:20px;
+    right:45px;
+    font-size:60px;
+    text-decoration: none;
+    color:white;
+    &:hover{
+        color: lighten(red, 20%);
+    }
+}
+// button to open
+#fsn-open{
+    display:inline-block;
+    text-align:center;
+    padding:14px 16px;
+    background-color:#000;
+    color:white;
+    text-transform: capitalize;
+    border:none;
+    width:120px;
+    cursor:pointer;
+    &:hover{
+        background-color:#999;
+    }
+}
+@media screen and (max-height:450px){
+    .fsn-overlay-content a{font-size: 20px;}
+    .fsn-overlay .btn-fsn-close {
+        font-size:40px;
+        top:15px;
+        right:35px;
+    }
+}

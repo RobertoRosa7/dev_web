@@ -1,0 +1,12 @@
+<div style="background:#ddd">
+
+	<h1>esta é a página Sobre nós</h1>
+
+	<?php foreach ($this->view->dados as $key => $info) { ?>
+
+		<h1><?= $info['titulo'] ?></h1>
+		<p><?= $info['descricao']?></p>
+
+	<?php } ?>	
+
+</div>

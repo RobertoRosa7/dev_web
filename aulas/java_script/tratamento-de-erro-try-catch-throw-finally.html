@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="imagens/js.svg">
+    <title>JavaScript</title>
+  </head>
+  <body style="margin-bottom:200px;">
+    <div class="container">
+      <h4 class="display-4 bg-warning text-center">Tratamento de erros (try catch, throw e finally</h4>
+
+      <div class="row no-gutters">
+        <div class="col-10">
+          <p>
+            É muito comum na programação acontecer de erros de script, erros de lógica nos algoritmos, fazendo com
+            que apliação "morra", isto é, interromper o programa.
+          </p>
+           <!-- JavaScript (Opcional) -->
+          <script>
+            /*
+            * try{} é um bloco de código - usado para evitar o interrompimento em casos de erros
+            * finally{} é usado após o try, indica que é para ser finalizado após capturar o erro
+            * catch(e){} é usado após o try, indica que é para tratar ou solucionar o erro e depois enviar para ser
+            * finalizada ou lançada
+            * throw{} é usado após o catch, indica que é para lançar exceções dentro das apliações
+
+            * Obs:
+            * O parâmetro que vai dentro de catch(e) representa uma variável que será a string do erro que está
+            * sendo tratada, assim, pode ser analisado.
+            */
+            
+            // Netflix
+            var video = new Array();
+            video[1] = new Array();
+            video[1]['nome'] = 'Fullmetal Alchemist';
+            video[1]['categoria'] = 'Anime';
+
+            function getVideo(video){
+              //Lógica - aqui pode haver diversas situações que causaria erro ao carregar a página
+              try{
+
+                console.log(video[0]['nome']); //aqui ocorreu um erro que interrompe o processamento do script
+              }catch(erro){
+
+                tratarErros(erro);
+                throw new Error('Houve um erro, mas já estamos solucionando!!!!!');
+
+
+              }finally{
+                console.log('Sempre passar por aqui');
+              }
+              console.log('A aplicação não morreu');
+            }
+            function tratarErros(e){
+              //Lógica
+            }
+            tratarErros(e);
+            getVideo(video);
+          </script>
+        </div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </body>
+</html>

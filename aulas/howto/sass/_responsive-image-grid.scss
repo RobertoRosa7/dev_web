@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+}
+// row 
+.row {
+    display:flex;
+    flex-wrap: wrap;
+}
+// create equal four column
+.column{
+    flex:24%;
+    max-width:50%;
+    padding:0 4px;
+}
+// img align vertical middle
+.column img{
+    margin-top:8px;
+    vertical-align: middle;
+    width:100%;
+}
+@media (max-width:574px){
+    .column{flex:99%;max-width:99%}
+}
+@media (min-width:575px) and (max-width:768px){
+    .column{flex:48%;max-width:49%;}
+}
+@media (min-width:769px) and (max-width:992px){
+    .column{flex:30%;max-width:35%;}
+}

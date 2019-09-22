@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Orçamento Pessoal</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    
+    <link rel="icon" href="img/orcamento-pessoal-logo.png">
+   
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body onload="carregarListaDespesas()">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-5">
+        <div class="container">
+          <a href="" class="navbar-brand"><img src="img/orcamento-pessoal-logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="#menu" aria-expanded="false" aria-label="Toggle navagation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="menu">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active"><a href="index.html" class="nav-link">Cadastro</a></li>
+              <li class="nav-item"><a href="consulta.html" class="nav-link">Consulta</a></li>
+            </ul>            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="registro">
+      <div class="container">
+        <div class="row">
+          <div class="col mb-5">
+            <h1 class="display-4 text-center">Consulte suas despesas</h1>
+          </div>
+        </div>
+        
+
+
+        <div class="row">
+          <div class="col-sm-4 col-md-2">
+            <span id="notify-ano" data-notify="invalid" for="ano">Escolha um Ano</span>
+            <select name="" id="ano" class="form-control">
+              <option value="">Ano</option>
+              <option value="2018">2018</option>
+            </select>
+          </div>
+
+          <div class="col-sm-4 col-md-2">
+            <span id="notify-mes" data-notify="invalid" for="mes">Escolha um Mês</span>
+            <select name="" id="mes" class="form-control">
+              <option value="">Mês</option>
+              <option value="01">Janeiro</option>
+              <option value="02">Fevereiro</option>
+              <option value="03">Março</option>
+              <option value="04">Abril</option>
+              <option value="05">Maio</option>
+              <option value="06">Junho</option>
+              <option value="07">Julho</option>
+              <option value="08">Agosto</option>
+              <option value="09">Setembro</option>
+              <option value="10">Outubro</option>
+              <option value="11">Novembro</option>
+              <option value="12">Dezembro</option>
+            </select>
+          </div>
+
+          <div class="col-sm-4 col-md-2">
+            <span id="notify-dia" data-notify="invalid" for="dia">Escolha um Dia</span>
+            <input onkeyup="extrairString()" onblur="changeBlur()" onfocus="changeFocus()"type="text" id="dia" placeholder="dia" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <span id="notify-tipo" data-notify="invalid" for="tipo">Escolha um Tipo</span>
+            <select name="" id="tipo" class="form-control">
+              <option value="">Tipo</option>
+              <option value="1">Alimentação</option>
+              <option value="2">Educação</option>
+              <option value="3">Lazer</option>
+              <option value="4">Saúde</option>
+              <option value="5">Transporte</option>
+            </select>
+          </div>
+        </div>
+        
+
+        <div class="row">
+          <div class="col-md-8">
+           <span id="notify-descricao" data-notify="invalid" for="descricao">Descrição</span>
+            <input onkeyup="extrairString()" onblur="changeBlur()" onfocus="changeFocus()" type="text" class="form-control" id="descricao" placeholder="descrição">
+          </div>
+
+          <div class="col-md-3 col-10">
+           <span id="notify-valor" data-notify="invalid" for="valor">Escolha um Valor</span>
+            <input onkeyup="extrairString()" onblur="changeBlur()" onfocus="changeFocus()" type="text" class="form-control" id="valor" placeholder="valor">
+          </div>
+
+          <div class="col-md-1 col-2 d-flex justify-content-end">
+            <button onclick="pesquisarDespesas()" class="btn btn-primary align-self-end" type="button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="table-responsive">
+            <div class="col">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody id="listaDespesas">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+     <section id="modalRegistrarDespesa">
+      <!--Modal-->
+      <div class="modal fade" id="modalRegistrarDespesas" tabindex="-1" role="dialog" aria-labelledby="titleModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="titleModal"></h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="" id="paragrafoSucesso"></p>
+            </div>
+            <div class="modal-footer">
+              <button id="botaoModal" data-dismiss="modal" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

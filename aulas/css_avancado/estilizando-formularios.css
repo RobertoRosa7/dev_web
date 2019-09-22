@@ -1,0 +1,47 @@
+/** Formulários */
+
+/** Geral **/
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size:1em;
+	color:#555;
+}
+h1{
+	text-align:center;
+	letter-spacing:0.1em;
+	font-family:sans-serif;
+}
+form{
+	width:60%;
+	margin: 0 auto;
+}
+fieldset{
+	margin: 1em 0;
+	padding:1em;
+	border:1px solid #ccc;
+	background-color:#fefefe;
+}
+legend{
+	font-weight:bold;
+	letter-spacing:0.1em;
+	font-family:sans-serif;
+}
+label{
+	display:block;
+	cursor:pointer;
+}
+input[type="text"]{
+	width:50%;
+}
+textarea{
+	width:50%;
+}
+input.radio,
+input.checkbox,
+input.submit{
+	width:auto;
+}
+/** Classes **/
+.radio{
+	margin-right: 1em;
+}

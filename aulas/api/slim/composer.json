@@ -1,0 +1,16 @@
+{
+	"name":"primeiro API",
+	"authors":[{
+		"name":"Roberto Rosa",
+		"email":"roberto.rosa7@gmail"
+	}],
+	"require":{
+		"slim/slim":"^3.0",
+		"illuminate/database": "^5.7"
+	},
+	"autoload":{
+		"psr-4":{
+			"MyApp\\":"src/MyApp"
+		}
+	}
+}

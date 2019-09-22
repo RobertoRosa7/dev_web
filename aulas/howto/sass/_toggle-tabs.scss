@@ -1,0 +1,53 @@
+// style tab
+.tab{
+    overflow:hidden;
+    border:1px solid #ccc;
+    background-color: #f1f1f1;
+}
+// general style button for the tab
+.tab button{
+    background-color:inherit;
+    border:none;
+    outline:none;
+    float:left;
+    cursor:pointer;
+    padding:14px 16px;
+    transition: .3s;
+    &:hover{
+        background-color:#ddd;
+    }
+}
+// create active button
+.tab button.active{
+    background-color:#ccc;
+}
+
+// style tab content
+.tab-content{
+    display:none;
+    padding:6px 12px;
+    border:1px solid #ccc;
+    border-top:none;
+    position:relative;
+}
+// fade in tabs
+.tab-content{
+    animation: fadeEffect 1s; // fade effects
+}
+// go to zero to opacity
+@keyframes fadeEffect{
+    from{opacity:0;}
+    to{opacity:1}
+}
+/* Style the close button */
+.tab-content .topright {
+    cursor: pointer;
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size: 18px;
+    &:hover{
+
+        color: red;
+    }
+}
