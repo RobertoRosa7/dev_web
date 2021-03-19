@@ -131,9 +131,7 @@ try {
     // habilitar autenticação 
     $mail->SMTPAuth = true;
     // configurar email de usuário
-    $mail->Username = 'kakashi.kisura7@gmail.com';
   	// configurar senha
-    $mail->Password = 'Tnzro&pzpzhsr';
     // habilitar encriptografia TLS ou SSL para envio de email
     $mail->SMTPSecure = 'tls';
     // habilitar porta especificar para cada tipo de encriptogria
